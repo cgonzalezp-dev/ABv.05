@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="SOP">
-<meta name="theme-color" content="#0D0D1A">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230D0D1A'/%3E%3Ctext x='90' y='125' font-size='100' text-anchor='middle'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
-<title>SOP — Sistema Operativo Personal</title>
+<meta name="apple-mobile-web-app-title" content="Órbita">
+<meta name="theme-color" content="#2A2878">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%235E5CE6'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M12 5.5a6.5 6.5 0 0 1 6.5 6.5M12 18.5A6.5 6.5 0 0 1 5.5 12'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='2' fill='%23fff'/%3E%3C/svg%3E">
+<title>Órbita — Sistema operativo personal</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
@@ -156,30 +157,153 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
 .emo-day{margin:0 16px 12px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
 .emo-day-h{padding:11px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .sync-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ═══ PREMIUM v7 · Aurora (día) / Grafito vivo (noche) · vidrio ═══ */
+:root{--sop:#5E5CE6;--sop2:#BF5AF2;--sop-dim:rgba(94,92,230,.22);--border2:rgba(191,90,242,.35);
+  --red:#FF453A;--blue:#0A84FF;--violet:#BF5AF2;--green:#30D158;--gold:#FFD60A;--orange:#FF9F0A;--orange-dim:rgba(255,159,10,.16);
+  --text:#FFFFFF;--text2:rgba(235,235,245,.72);--text3:rgba(235,235,245,.45);
+  --glass:rgba(255,255,255,.10);--glass2:rgba(255,255,255,.16);--gline:rgba(255,255,255,.18);
+  --card:var(--glass);--card2:var(--glass2);--border:var(--gline);--r:20px;--r2:24px;--blur:blur(22px) saturate(170%)}
+html.night{--sop:#0A84FF;--sop2:#64D2FF;--sop-dim:rgba(10,132,255,.18);--border2:rgba(100,210,255,.3);
+  --glass:rgba(255,255,255,.07);--glass2:rgba(255,255,255,.11);--gline:rgba(255,255,255,.12)}
+html,body{background:#000;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',sans-serif}
+.amb{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--ambBg,#1b1a4a);transition:background .6s}
+.amb i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.9;will-change:transform,background;transition:background .7s ease}
+#ab1{width:360px;height:360px;left:-120px;top:-90px}#ab2{width:320px;height:320px;right:-140px;top:38%}#ab3{width:300px;height:300px;left:-40px;bottom:-120px}
+html.night .amb i{opacity:.55;filter:blur(90px)}
+.amb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.18)}
+html.night .amb::after{background:rgba(0,0,0,.42)}
+#main,#onboarding,.toast{position:relative;z-index:1}
+.sh{background:transparent;transition:background .3s,backdrop-filter .3s}
+.sh.glassy{background:rgba(20,20,40,.28);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-bottom:0.5px solid var(--gline)}
+.sh-title,.ob-title,.modal-title{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Space Grotesk',sans-serif;letter-spacing:-.4px}
+.sh-title{font-size:32px}
+.card,.hi,.sc,.mc,.learn-card,.emo-day,.axis,.tip-card{background:var(--glass);border:0.5px solid var(--gline);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.axis{border-top-left-radius:var(--r2)}
+.hi{border-radius:22px;padding:14px 16px}
+.hi.done{background:rgba(48,209,88,.16);border-color:rgba(48,209,88,.35)}
+.hi.mini{background:rgba(255,214,10,.12);border-color:rgba(255,214,10,.3)}
+.hi-icon{border-radius:14px;background:rgba(255,255,255,.14)!important}
+.sl{color:var(--text2);text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;padding:14px 22px 8px}
+.nav{left:12px;right:12px;bottom:calc(10px + var(--sb));padding:6px 4px;border-radius:28px;background:rgba(30,30,50,.38);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:0.5px solid var(--gline);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.screen{padding-bottom:110px}
+.nb.active{background:rgba(255,255,255,.14)}
+.nb.active .nb-label{color:#fff}
+.btn{border-radius:16px}.bp{background:linear-gradient(135deg,var(--sop),var(--sop2))}
+.inp{background:rgba(255,255,255,.10);border:0.5px solid var(--gline);border-radius:14px}
+.modal{background:rgba(28,28,46,.72);backdrop-filter:blur(30px) saturate(170%);-webkit-backdrop-filter:blur(30px) saturate(170%);border-top:0.5px solid var(--gline);border-radius:28px 28px 0 0}
+.modal-ov{background:rgba(0,0,0,.35)}
+.toast{position:absolute;background:rgba(28,28,46,.7);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:0.5px solid var(--gline);border-radius:18px}
+.stop-ov{background:rgba(10,10,25,.72);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px)}
+.tag{border-width:0.5px}
+.hck{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.55);background:transparent;color:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:transform .15s,background .2s}
+.hck:active{transform:scale(.86);background:var(--green)}
+.hmin{background:none;border:none;color:var(--text3);font-size:11px;font-weight:600;cursor:pointer;padding:2px}
+.hnow{border:none;cursor:pointer;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);white-space:nowrap}
+.hnow:active{transform:scale(.94)}
+/* Pomodoro */
+.pomo-ov{position:absolute;inset:0;z-index:400;display:none;flex-direction:column;align-items:center;justify-content:center;padding:calc(var(--st) + 24px) 24px calc(var(--sb) + 24px);background:rgba(8,8,20,.55);backdrop-filter:blur(34px) saturate(170%);-webkit-backdrop-filter:blur(34px) saturate(170%);text-align:center}
+.pomo-ov.show{display:flex}
+.pchips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;margin:18px 0 12px}
+.pchip{padding:14px 0;border-radius:16px;border:0.5px solid var(--gline);background:var(--glass);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+.pchip.on{background:linear-gradient(135deg,var(--sop),var(--sop2));border-color:transparent}
+.pring{width:240px;height:240px;position:relative;margin:10px 0 22px}
+.pring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ptime{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:54px;font-weight:300;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.prow{display:flex;gap:10px;width:100%}
+.prow .btn{flex:1}
+
+/* ═══ ÍCONOS ÓRBITA ═══ */
+.ico{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.15em;flex-shrink:0;overflow:visible}
+.hi-icon{color:#fff;font-size:22px}
+.nb-icon{font-size:22px;color:var(--text3);display:flex;transition:color .2s,transform .2s}
+.nb.active .nb-icon{color:#fff}
+.eb{color:#fff;font-size:24px}
+.eb.sel{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
+.emo-ic{font-size:22px;display:flex;color:#fff}
+.t-ico{display:flex;font-size:18px;color:#fff}
+.icobtn{background:none;border:none;cursor:pointer;font-size:16px;padding:4px;color:var(--text2);display:flex}
+.btn .ico{font-size:1.15em}
+.btn[style*="flex-direction:column"] .ico{font-size:24px}
+.hnow{display:inline-flex;align-items:center;gap:5px}.hnow .ico{font-size:11px}
+.hck{color:transparent}.hck .ico{font-size:16px}
+.brandmark{width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,#3634A3,#5E5CE6 45%,#BF5AF2 80%,#FF375F);display:flex;align-items:center;justify-content:center;font-size:44px;color:#fff;box-shadow:0 12px 30px rgba(94,92,230,.45)}
+html.night .brandmark{background:linear-gradient(135deg,#1C1C1E,#2C2C2E);box-shadow:0 0 0 0.5px rgba(255,255,255,.2),0 12px 30px rgba(10,132,255,.25)}
+.wordmark{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.2px;color:var(--text2);margin-bottom:14px}
+.wordmark .ico{font-size:18px;color:#fff}
+.icopick{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.ipk{aspect-ratio:1;border-radius:14px;border:0.5px solid var(--gline);background:var(--glass);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ipk.on{background:linear-gradient(135deg,var(--sop),var(--sop2));border-color:transparent}
+.bdot{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:30px}
+.stop-ring{border-color:rgba(255,255,255,.25)}
+@keyframes icpop{0%{transform:scale(1)}35%{transform:scale(1.28) rotate(-6deg)}70%{transform:scale(.94)}100%{transform:scale(1)}}
+@keyframes hiflash{0%{box-shadow:0 0 0 0 rgba(48,209,88,.55)}100%{box-shadow:0 0 0 14px rgba(48,209,88,0)}}
+.hi.pop .hi-icon{animation:icpop .5s cubic-bezier(.3,1.4,.5,1)}
+.hi.pop{animation:hiflash .6s ease-out}
+.wg-d .ico,.wm-cell .ico{font-size:12px}
+.arring .ar-ic .ico{width:20px;height:20px;transform:none;color:#fff}
+.bringw .ico,.pring .ico{transform:none;width:1em;height:1em}
 </style>
 </head>
 <body>
 <div class="app" id="app">
 
-<div class="toast" id="toast"><span class="t-ico" id="ti">⚡</span><span class="t-msg" id="tm">Listo</span><span class="t-xp" id="tx"></span></div>
+<div class="amb" id="amb" aria-hidden="true"><i id="ab1"></i><i id="ab2"></i><i id="ab3"></i></div>
+
+<!-- POMODORO -->
+<div class="pomo-ov" id="pomoOv">
+  <div id="pomoPick" style="width:100%;max-width:360px">
+    <div style="font-size:40px;margin-bottom:6px" id="pp-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M10 3h4"/></svg></div>
+    <div class="modal-title" style="margin-bottom:4px" id="pp-name">Hábito</div>
+    <div style="font-size:14px;color:var(--text2)">¿Cuánto tiempo de foco le das ahora?</div>
+    <div class="pchips" id="pp-chips"></div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px">
+      <input class="inp" id="pp-custom" type="number" min="1" max="180" placeholder="Otro (min)" style="text-align:center" oninput="pomoCustom()">
+    </div>
+    <label style="display:flex;align-items:center;gap:10px;text-align:left;font-size:13px;color:var(--text2);margin-bottom:18px;cursor:pointer">
+      <input type="checkbox" id="pp-focus" style="width:20px;height:20px;accent-color:var(--sop)">
+      <span>Activar modo Concentración del iPhone (Atajo <b>Órbita Foco</b>)</span>
+    </label>
+    <button class="btn bp" onclick="pomoStart()" style="margin-bottom:10px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg> Iniciar foco</button>
+    <button class="btn bs" onclick="pomoClose()">Ahora no</button>
+  </div>
+  <div id="pomoRun" style="display:none;width:100%;max-width:360px;flex-direction:column;align-items:center">
+    <div style="font-size:13px;color:var(--text2)" id="pr-lbl">En foco</div>
+    <div style="font-size:20px;font-weight:600;margin-top:4px" id="pr-name">Hábito</div>
+    <div class="pring">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="6"/>
+      <circle id="pr-ring" cx="60" cy="60" r="54" fill="none" stroke="url(#pgrad)" stroke-width="6" stroke-linecap="round" style="stroke-dasharray:339.3;stroke-dashoffset:0;transition:stroke-dashoffset .5s linear"/>
+      <defs><linearGradient id="pgrad"><stop offset="0" stop-color="var(--sop)"/><stop offset="1" stop-color="var(--sop2)"/></linearGradient></defs></svg>
+      <div class="ptime"><span id="pr-time">25:00</span><span style="font-size:13px;color:var(--text2);letter-spacing:0;margin-top:4px" id="pr-sub">Nada más que esto</span></div>
+    </div>
+    <div class="prow" style="margin-bottom:10px">
+      <button class="btn bs" onclick="pomoPause()" id="pr-pause"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg> Pausa</button>
+      <button class="btn bs" onclick="pomoAdd(5)">+5 min</button>
+    </div>
+    <button class="btn bp" onclick="pomoDone()" style="margin-bottom:10px">✓ Terminé la actividad</button>
+    <button class="btn bg2" onclick="pomoQuit()" style="border-color:var(--gline);color:var(--text2)">Abandonar</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="t-ico" id="ti"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12"/></svg></span><span class="t-msg" id="tm">Listo</span><span class="t-xp" id="tx"></span></div>
 
 <!-- STOP OVERLAY -->
 <div class="stop-ov" id="stopOv">
-  <div class="stop-ring"><div class="bdot" id="bdot">🌬️</div></div>
+  <div class="stop-ring"><div class="bdot" id="bdot"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/></svg></div></div>
   <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:10px" id="stopTitle">Protocolo STOP</div>
   <div style="font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:28px" id="stopDesc">Antes de actuar, tomemos un momento.</div>
   <div id="stopEmos" style="display:none;width:100%;margin-bottom:24px">
     <div style="font-size:13px;color:var(--text2);margin-bottom:14px">¿Cómo te sientes ahora?</div>
     <div class="emo-row">
-      <button class="eb" onclick="stopEmo(this,'😡','Enojado')">😡</button>
-      <button class="eb" onclick="stopEmo(this,'😤','Frustrado')">😤</button>
-      <button class="eb" onclick="stopEmo(this,'😰','Ansioso')">😰</button>
-      <button class="eb" onclick="stopEmo(this,'😔','Triste')">😔</button>
-      <button class="eb" onclick="stopEmo(this,'😌','Bien')">😌</button>
+      <button class="eb" onclick="stopEmo(this,'e-ira','Enojado')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15l3-6 3 6 3-6 3 6 3-6 3 6"/></svg></button>
+      <button class="eb" onclick="stopEmo(this,'e-frus','Frustrado')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12c0-4 6-4 6 0s6 4 6 0-6-4-6 0-6 4-6 0z"/></svg></button>
+      <button class="eb" onclick="stopEmo(this,'e-ans','Ansioso')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l2-2 2 3 2-4 2 5 2-5 2 4 2-3 2 2 2-1"/></svg></button>
+      <button class="eb" onclick="stopEmo(this,'e-tri','Triste')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/></svg></button>
+      <button class="eb" onclick="stopEmo(this,'e-calma','Bien')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13c3-3 6-3 9 0s6 3 9 0"/></svg></button>
     </div>
   </div>
   <div id="stopDone" style="display:none;text-align:center">
-    <div style="font-size:52px;margin-bottom:14px">✅</div>
+    <div style="font-size:52px;margin-bottom:14px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg></div>
     <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--green);margin-bottom:8px">Pausa completada</div>
     <div style="font-size:13px;color:var(--text2);margin-bottom:24px">Identificar el detonante ya es progreso · +80 XP IE</div>
     <button class="btn bp" style="max-width:280px" onclick="closeStop()">Entrar al modo casa ✓</button>
@@ -193,7 +317,7 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="modal-title" id="hm-title">Nuevo hábito</div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
       <div><div class="sl" style="padding:0 0 6px">Nombre del hábito</div><input class="inp" id="hm-name" placeholder="Ej: Cita con mi esposa" maxlength="60"></div>
-      <div><div class="sl" style="padding:0 0 6px">Ícono (emoji)</div><input class="inp" id="hm-icon" placeholder="💑" maxlength="4" style="font-size:24px;text-align:center"></div>
+      <div><div class="sl" style="padding:0 0 6px">Ícono</div><input type="hidden" id="hm-icon" value="spark"><div class="icopick" id="hm-icons"></div></div>
       <div><div class="sl" style="padding:0 0 6px">Periodicidad</div>
         <select class="inp" id="hm-period">
           <option value="daily">Diario</option>
@@ -205,11 +329,12 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
       <div><div class="sl" style="padding:0 0 6px">XP versión mínima</div><input class="inp" id="hm-xpmin" type="number" min="5" max="250" value="40"></div>
       <div><div class="sl" style="padding:0 0 6px">Área de vida</div>
         <select class="inp" id="hm-area">
-          <option value="Cuerpo">💪 Cuerpo</option>
-          <option value="Mente">🧠 Mente</option>
-          <option value="Emocion">🌊 Emoción</option>
-          <option value="Relaciones">🌱 Relaciones</option>
-          <option value="Finanzas">💎 Finanzas</option>
+          <option value="Cuerpo">Cuerpo</option>
+          <option value="Mente">Mente</option>
+          <option value="Emocion">Emoción</option>
+          <option value="Relaciones">Relaciones</option>
+          <option value="Finanzas">Finanzas</option>
+          <option value="Carrera">Carrera</option>
         </select>
       </div>
     </div>
@@ -224,11 +349,11 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="ob-step">Paso 1 de 4</div>
     <div class="ob-title">Tu sistema operativo personal</div>
-    <div class="ob-sub">SOP no registra hábitos — los diseña. Tu mejor versión como resultado automático de tu entorno.</div>
+    <div class="ob-sub">Órbita no registra hábitos — los diseña. Tu mejor versión como resultado automático de tu entorno.</div>
     <div style="background:var(--sop-dim);border:1px solid var(--border2);border-radius:var(--r2);padding:24px;text-align:center;margin-bottom:32px">
-      <div style="font-size:56px;margin-bottom:12px">⚡</div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--sop2)">Sistema Operativo Personal</div>
-      <div style="font-size:13px;color:var(--text2);margin-top:6px">v3.0 · Con sync a Supabase</div>
+      <div class="brandmark" style="margin:0 auto 14px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12"/></svg></div>
+      <div style="font-size:28px;font-weight:600;letter-spacing:-.5px">Órbita</div>
+      <div style="font-size:13px;color:var(--text2);margin-top:4px">Sistema operativo personal</div>
     </div>
     <div style="flex:1"></div>
     <button class="btn bp" onclick="goOb(2)">Empecemos →</button>
@@ -237,11 +362,11 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="dots"><div class="dot"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="ob-step">Paso 2 de 4</div>
     <div class="ob-title">¿Cómo te llamas?</div>
-    <div class="ob-sub">SOP te llama por tu nombre.</div>
+    <div class="ob-sub">Órbita te llama por tu nombre.</div>
     <input class="inp" id="ob-name" placeholder="Tu nombre" maxlength="30" style="font-size:20px;margin-bottom:16px;text-align:center" oninput="previewName()">
     <div style="background:var(--sop-dim);border:1px solid var(--border2);border-radius:var(--r2);padding:16px;text-align:center;margin-bottom:28px">
       <div style="font-size:13px;color:var(--text2);margin-bottom:4px">Buenos días,</div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700" id="name-preview">Cristian 👋</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700" id="name-preview">Cristian</div>
     </div>
     <div style="flex:1"></div>
     <button class="btn bp" onclick="goOb(3)">Continuar →</button>
@@ -259,10 +384,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
   <div class="ob" id="ob4" style="display:none">
     <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot on"></div></div>
     <div class="ob-step">Paso 4 de 4</div>
-    <div class="ob-title">Tus 7 hábitos ancla</div>
-    <div class="ob-sub">Ahora incluyen 2 hábitos de Relaciones: tiempo de calidad y paseo con tus perritas.</div>
+    <div class="ob-title">Tus hábitos ancla</div>
+    <div class="ob-sub">Modo búsqueda de empleo: ordenados por bloque del día, de la mañana al cierre.</div>
     <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:28px" id="ob-habits-list"></div>
-    <button class="btn bp" onclick="activateSOP()" style="font-size:16px;padding:18px">⚡ Activar SOP</button>
+    <button class="btn bp" onclick="activateSOP()" style="font-size:16px;padding:18px">Activar Órbita</button>
   </div>
 </div>
 
@@ -271,9 +396,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
   <!-- HOME -->
   <div class="screen active" id="s-home">
-    <div style="padding:calc(var(--st) + 52px) 20px 18px">
+    <div style="padding:calc(var(--st) + 40px) 20px 18px">
+      <div class="wordmark"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12"/></svg><span>Órbita</span></div>
       <div style="font-size:13px;color:var(--text2);margin-bottom:4px" id="h-greet">Buenos días,</div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700" id="h-name">Cristian 👋</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700" id="h-name">Cristian</div>
       <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
         <span class="lvl" id="h-lvl">Lv.1</span>
         <span style="font-size:12px;color:var(--text2)" id="h-xp-txt">0 / 2.500 XP</span>
@@ -293,7 +419,7 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
         <div>
           <div class="clbl" style="margin-bottom:6px">Racha Maestra</div>
           <div style="display:flex;align-items:center;gap:10px">
-            <span style="font-size:30px" id="h-flame">🔥</span>
+            <span style="font-size:30px" id="h-flame"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.6 1 2.5 2 3 .5-3-.3-5.5.5-8z"/></svg></span>
             <div><span style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700" id="h-streak">1</span><span style="font-size:13px;color:var(--text2);margin-left:4px">días</span></div>
           </div>
         </div>
@@ -309,10 +435,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="arw" id="arw"></div>
     <div class="sl">Acciones rápidas</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px 4px">
-      <button class="btn bs" onclick="nav('habitos')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px">✅</span><span style="font-size:12px">Hábitos de hoy</span></button>
-      <button class="btn bs" onclick="nav('nocturno')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px">🌙</span><span style="font-size:12px">Checklist noche</span></button>
-      <button class="btn bs" onclick="showStop()" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px">⏸️</span><span style="font-size:12px">Protocolo STOP</span></button>
-      <button class="btn bs" onclick="nav('ie')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px">🌊</span><span style="font-size:12px">Estado emocional</span></button>
+      <button class="btn bs" onclick="nav('habitos')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg></span><span style="font-size:12px">Hábitos de hoy</span></button>
+      <button class="btn bs" onclick="nav('nocturno')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span style="font-size:12px">Checklist noche</span></button>
+      <button class="btn bs" onclick="showStop()" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg></span><span style="font-size:12px">Protocolo STOP</span></button>
+      <button class="btn bs" onclick="nav('ie')" style="height:68px;flex-direction:column;gap:5px"><span style="font-size:22px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0" opacity=".5"/></svg></span><span style="font-size:12px">Estado emocional</span></button>
     </div>
   </div>
 
@@ -324,7 +450,7 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
         <button class="btn bg2 bsm" onclick="openHabitModal()" style="width:auto">+ Nuevo</button>
       </div>
       <div style="margin-top:10px;padding:8px 12px;background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.2);border-radius:10px;display:flex;align-items:center;gap:8px">
-        <span style="font-size:14px">🔄</span>
+        <span style="font-size:14px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 3v5h5M4 13a8 8 0 0 0 14.3 4.9L20 16M20 21v-5h-5"/></svg></span>
         <span style="font-size:12px;color:var(--text2);flex:1">Reset automático 11:59 PM Colombia</span>
         <button onclick="confirmReset()" style="background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3);color:var(--orange);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer">Reiniciar</button>
       </div>
@@ -333,14 +459,13 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
       <div class="axis-h"><div class="axis-av">AX</div><div class="axis-nm">AXIS</div></div>
       <div class="axis-tx" id="hab-axis">Cada hábito completado es un voto por tu identidad.</div>
     </div>
-    <div class="sl">Hábitos del sistema</div>
     <div id="habits-list"></div>
     <div class="sl" style="margin-top:4px">Mis hábitos personalizados</div>
     <div id="custom-habits-list"></div>
     <div id="no-custom" style="padding:16px;text-align:center;color:var(--text3);font-size:13px;display:none">Sin hábitos personalizados.<br>Toca "+ Nuevo" para crear uno.</div>
     <div class="sl" style="margin-top:4px">¿Día muy difícil?</div>
     <div class="card" style="background:rgba(255,107,53,.07);border-color:rgba(255,107,53,.18)">
-      <div style="font-size:14px;font-weight:700;color:var(--orange);margin-bottom:6px">🛡️ Modo Supervivencia</div>
+      <div style="font-size:14px;font-weight:700;color:var(--orange);margin-bottom:6px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Modo Supervivencia</div>
       <div style="font-size:13px;color:var(--text2);margin-bottom:14px">Versiones mínimas de todo. La racha se mantiene.</div>
       <button class="btn bsm" style="background:var(--orange);color:#fff;border:none" onclick="survival()">Activar Modo Supervivencia</button>
     </div>
@@ -356,10 +481,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     </div>
     <div class="sl">Entrenamiento de mañana</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px;margin-bottom:16px">
-      <button class="btn bs bsm" id="wk0" onclick="pickWk('Fuerza + Piernas 🏋️',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px">🏋️</span><span style="font-size:12px">Fuerza</span></button>
-      <button class="btn bs bsm" id="wk1" onclick="pickWk('Cardio — 8km 🏃',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px">🏃</span><span style="font-size:12px">Cardio</span></button>
-      <button class="btn bs bsm" id="wk2" onclick="pickWk('Híbrido ⚡',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px">⚡</span><span style="font-size:12px">Híbrido</span></button>
-      <button class="btn bs bsm" id="wk3" onclick="pickWk('Descanso activo 😴',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px">😴</span><span style="font-size:12px">Descanso</span></button>
+      <button class="btn bs bsm" id="wk0" onclick="pickWk('Fuerza + Piernas',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12"/></svg></span><span style="font-size:12px">Fuerza</span></button>
+      <button class="btn bs bsm" id="wk1" onclick="pickWk('Cardio — 8km',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><span style="font-size:12px">Cardio</span></button>
+      <button class="btn bs bsm" id="wk2" onclick="pickWk('Híbrido',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12"/></svg></span><span style="font-size:12px">Híbrido</span></button>
+      <button class="btn bs bsm" id="wk3" onclick="pickWk('Descanso activo',this)" style="height:60px;flex-direction:column;gap:4px"><span style="font-size:20px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M21 11v3M6 11v3"/></svg></span><span style="font-size:12px">Descanso</span></button>
     </div>
     <div class="sl">Plan de mañana</div>
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r2);margin:0 16px 16px;overflow:hidden">
@@ -373,10 +498,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="sl">Lo que aprendí hoy</div>
     <div style="padding:0 16px;margin-bottom:16px">
       <textarea class="inp" id="learn-input" rows="4" placeholder="¿Qué aprendí hoy?" style="resize:none;margin-bottom:10px"></textarea>
-      <button class="btn bp" onclick="saveLearn()">💾 Guardar aprendizaje</button>
+      <button class="btn bp" onclick="saveLearn()"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg> Guardar aprendizaje</button>
     </div>
     <div style="padding:0 16px">
-      <button class="btn bp" onclick="finishChecklist()" id="btn-cl">🌙 Completar checklist — +150 XP</button>
+      <button class="btn bp" onclick="finishChecklist()" id="btn-cl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg> Completar checklist — +150 XP</button>
     </div>
     <div style="height:16px"></div>
   </div>
@@ -387,27 +512,27 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <div class="card">
       <div class="clbl" style="margin-bottom:14px">Estado actual</div>
       <div class="emo-row" id="emo-main">
-        <button class="eb" onclick="logEmo(this,'😡','Enojado',1)">😡</button>
-        <button class="eb" onclick="logEmo(this,'😤','Frustrado',2)">😤</button>
-        <button class="eb" onclick="logEmo(this,'😐','Neutral',3)">😐</button>
-        <button class="eb" onclick="logEmo(this,'🙂','Bien',4)">🙂</button>
-        <button class="eb" onclick="logEmo(this,'😄','Excelente',5)">😄</button>
+        <button class="eb" onclick="logEmo(this,'e-ira','Enojado',1)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15l3-6 3 6 3-6 3 6 3-6 3 6"/></svg></button>
+        <button class="eb" onclick="logEmo(this,'e-frus','Frustrado',2)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12c0-4 6-4 6 0s6 4 6 0-6-4-6 0-6 4-6 0z"/></svg></button>
+        <button class="eb" onclick="logEmo(this,'e-neu','Neutral',3)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/></svg></button>
+        <button class="eb" onclick="logEmo(this,'e-calma','Bien',4)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13c3-3 6-3 9 0s6 3 9 0"/></svg></button>
+        <button class="eb" onclick="logEmo(this,'e-feliz','Excelente',5)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg></button>
       </div>
       <div style="font-size:12px;color:var(--text2);text-align:center;margin-top:10px" id="emo-lbl">Selecciona cómo te sientes</div>
     </div>
     <div class="sl">¿Qué lo detonó? (se asocia al último registro)</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;padding:0 16px;margin-bottom:16px" id="trg-row">
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'💼 Trabajo')">💼 Trabajo</button>
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'🤝 Cliente')">🤝 Cliente</button>
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'🐾 Mascotas')">🐾 Mascotas</button>
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'💑 Pareja')">💑 Pareja</button>
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'😴 Cansancio')">😴 Cansancio</button>
-      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'❓ Sin razón')">❓ Sin razón</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Trabajo')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg> Trabajo</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Cliente')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a5.5 5.5 0 0 1 3 5"/></svg> Cliente</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Mascotas')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="16" r="3.5"/><circle cx="6" cy="11" r="1.8"/><circle cx="18" cy="11" r="1.8"/><circle cx="9" cy="6.5" r="1.8"/><circle cx="15" cy="6.5" r="1.8"/></svg> Mascotas</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Pareja')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg> Pareja</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Cansancio')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M21 11v3M6 11v3"/></svg> Cansancio</button>
+      <button class="tag t-sop" style="cursor:pointer" onclick="logTrigger(this,'Sin razón')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17v.3"/></svg> Sin razón</button>
     </div>
     <div class="sl">Herramientas</div>
     <div class="card" style="cursor:pointer" onclick="showStop()">
       <div style="display:flex;align-items:center;gap:14px">
-        <span style="font-size:32px">⏸️</span>
+        <span style="font-size:32px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg></span>
         <div style="flex:1"><div style="font-weight:700;font-size:14px;margin-bottom:3px">Protocolo STOP</div><div style="font-size:12px;color:var(--text2)">Respiración guiada · 90 segundos</div></div>
         <span class="tag t-vio">+80 XP</span>
       </div>
@@ -441,9 +566,9 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     </div>
     <div class="sl">Matriz de hábitos · últimos 7 días</div>
     <div class="card" style="padding:12px 16px" id="sem-matrix"></div>
-    <div class="sl">⚠️ Lo que faltó esta semana</div>
+    <div class="sl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg> Lo que faltó esta semana</div>
     <div id="sem-missed"></div>
-    <div class="sl">💡 Tips de AXIS para mejorar</div>
+    <div class="sl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg> Tips de AXIS para mejorar</div>
     <div id="sem-tips"></div>
     <div style="height:16px"></div>
   </div>
@@ -474,10 +599,10 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
       <button class="btn bp bsm" onclick="addSpend()">+ Agregar</button>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px;margin-bottom:16px">
-      <button class="btn bs bsm" onclick="quickSpend(12000,'☕ Café')">☕ Café — 12k</button>
-      <button class="btn bs bsm" onclick="quickSpend(25000,'🍱 Almuerzo')">🍱 Almuerzo — 25k</button>
-      <button class="btn bs bsm" onclick="quickSpend(38000,'🍽️ Restaurante')">🍽️ Rest. — 38k</button>
-      <button class="btn bs bsm" onclick="quickSpend(55000,'🌮 Especial')">🌮 Especial — 55k</button>
+      <button class="btn bs bsm" onclick="quickSpend(12000,'Café')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M9 3v3M12 3v3"/></svg> Café — 12k</button>
+      <button class="btn bs bsm" onclick="quickSpend(25000,'Almuerzo')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h18a9 9 0 0 1-18 0zM8 7c0-1.5 1.5-1.5 1.5-3M12 7c0-1.5 1.5-1.5 1.5-3"/></svg> Almuerzo — 25k</button>
+      <button class="btn bs bsm" onclick="quickSpend(38000,'Restaurante')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 3-3 6s1 4 3 4v8"/></svg> Rest. — 38k</button>
+      <button class="btn bs bsm" onclick="quickSpend(55000,'Especial')"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.8 4.5 4.5 8.2 9 9-4.5.8-8.2 4.5-9 9-.8-4.5-4.5-8.2-9-9 4.5-.8 8.2-4.5 9-9z"/></svg> Especial — 55k</button>
     </div>
     <div class="sl">Historial semana</div>
     <div id="b-log" style="padding:0 16px 16px"></div>
@@ -498,29 +623,29 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
     <!-- SUPABASE CONFIG -->
     <div class="card">
       <div class="crow" style="margin-bottom:10px">
-        <div class="clbl">☁️ Sincronización Supabase</div>
+        <div class="clbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg> Sincronización Supabase</div>
         <span class="tag" id="sb-status-tag" style="background:var(--card2);color:var(--text3);border:1px solid var(--border)">Sin configurar</span>
       </div>
       <div style="font-size:12px;color:var(--text2);margin-bottom:10px">Pega tu anon key (Supabase → Settings → API → anon public). La URL ya está configurada para tu Finance Project.</div>
       <input class="inp" id="sb-key" placeholder="eyJhbGc..." style="font-size:12px;margin-bottom:8px;font-family:monospace">
       <div style="display:flex;gap:8px">
         <button class="btn bp bsm" onclick="saveSbKey()" style="flex:1">Guardar clave</button>
-        <button class="btn bs bsm" onclick="syncNow()" style="flex:1">☁️ Sincronizar</button>
+        <button class="btn bs bsm" onclick="syncNow()" style="flex:1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg> Sincronizar</button>
       </div>
       <div style="font-size:11px;color:var(--text3);margin-top:8px" id="sb-last">Último sync: nunca</div>
     </div>
 
     <div class="card">
-      <div class="clbl" style="margin-bottom:10px">✏️ Editar perfil</div>
+      <div class="clbl" style="margin-bottom:10px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg> Editar perfil</div>
       <input class="inp" id="edit-name" placeholder="Tu nombre" style="margin-bottom:8px">
       <button class="btn bp bsm" onclick="saveName()" style="width:auto">Guardar nombre</button>
     </div>
 
     <div class="sg">
-      <div class="sc"><div class="sv" id="p-streak">1</div><div class="sl2">Racha 🔥</div></div>
-      <div class="sc"><div class="sv" id="p-txp">0</div><div class="sl2">XP hoy ⚡</div></div>
+      <div class="sc"><div class="sv" id="p-streak">1</div><div class="sl2">Racha <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.6 1 2.5 2 3 .5-3-.3-5.5.5-8z"/></svg></div></div>
+      <div class="sc"><div class="sv" id="p-txp">0</div><div class="sl2">XP hoy <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12"/></svg></div></div>
       <div class="sc"><div class="sv" id="p-hdone">0</div><div class="sl2">Hábitos totales</div></div>
-      <div class="sc"><div class="sv" id="p-elog">0</div><div class="sl2">Registros IE 🌊</div></div>
+      <div class="sc"><div class="sv" id="p-elog">0</div><div class="sl2">Registros IE <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0" opacity=".5"/></svg></div></div>
     </div>
 
     <div class="sl">Por área</div>
@@ -532,13 +657,13 @@ select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns
 
   <!-- NAV -->
   <nav class="nav">
-    <button class="nb active" onclick="nav('home')" id="n-home"><span class="nb-icon">🏠</span><span class="nb-label">Inicio</span></button>
-    <button class="nb" onclick="nav('habitos')" id="n-habitos"><span class="nb-icon">✅</span><span class="nb-label">Hábitos</span></button>
-    <button class="nb" onclick="nav('nocturno')" id="n-nocturno"><span class="nb-icon">🌙</span><span class="nb-label">Noche</span></button>
-    <button class="nb" onclick="nav('semana')" id="n-semana"><span class="nb-icon">📅</span><span class="nb-label">Semana</span></button>
-    <button class="nb" onclick="nav('learn')" id="n-learn"><span class="nb-icon">📚</span><span class="nb-label">Aprender</span></button>
-    <button class="nb" onclick="nav('budget')" id="n-budget"><span class="nb-icon">💰</span><span class="nb-label">Budget</span></button>
-    <button class="nb" onclick="nav('progreso')" id="n-progreso"><span class="nb-icon">📊</span><span class="nb-label">Perfil</span></button>
+    <button class="nb active" onclick="nav('home')" id="n-home"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg></span><span class="nb-label">Inicio</span></button>
+    <button class="nb" onclick="nav('habitos')" id="n-habitos"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></svg></span><span class="nb-label">Hábitos</span></button>
+    <button class="nb" onclick="nav('nocturno')" id="n-nocturno"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span class="nb-label">Noche</span></button>
+    <button class="nb" onclick="nav('semana')" id="n-semana"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/><circle cx="15" cy="15" r="1.3" fill="currentColor"/></svg></span><span class="nb-label">Semana</span></button>
+    <button class="nb" onclick="nav('learn')" id="n-learn"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5c-3-.5-6 0-8 1.5zM12 6v14.5"/></svg></span><span class="nb-label">Aprender</span></button>
+    <button class="nb" onclick="nav('budget')" id="n-budget"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2M7 6V5a2 2 0 0 1 2-2h8"/></svg></span><span class="nb-label">Budget</span></button>
+    <button class="nb" onclick="nav('progreso')" id="n-progreso"><span class="nb-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16M8 15l4-5 3 3 5-6"/></svg></span><span class="nb-label">Perfil</span></button>
   </nav>
 </div>
 </div>
@@ -593,35 +718,76 @@ const DEFAULT_STATE = {
   stopCount:0, habitsDone:0, emoLogs:0, survivalUsed:false,
   gymThisWeek:0,
   budget:{spent:0,max:100000,log:[],cumulative:0},
-  areas:{Cuerpo:0,Mente:0,Emocion:0,Relaciones:0,Finanzas:0},
+  areas:{Cuerpo:0,Mente:0,Emocion:0,Relaciones:0,Finanzas:0,Carrera:0},
   customHabits:[],
   learns:[],            // {id,date,time,text,synced}
   lastSync:null
 };
 let S = JSON.parse(JSON.stringify(DEFAULT_STATE));
 
+
 // ════════════════════════════════════════════
-// CORE HABITS — now 7 (2 new in Relaciones)
+// ÍCONOS ÓRBITA — set propio, monocromático (currentColor)
 // ════════════════════════════════════════════
+const ICO={"logo": "<circle cx=\"12\" cy=\"12\" r=\"2.2\" fill=\"currentColor\"/><path d=\"M12 4a8 8 0 0 1 8 8M12 20a8 8 0 0 1-8-8M12 7.5a4.5 4.5 0 0 1 4.5 4.5M12 16.5A4.5 4.5 0 0 1 7.5 12\"/>", "wake": "<path d=\"M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5.6 10.6l1.8 1.8M18.4 10.6l-1.8 1.8\"/>", "gym": "<path d=\"M3 12h4l2-5 4 10 2-5h6\"/>", "medit": "<path d=\"M12 20c-4 0-7-2-8-5 3 0 6 1 8 5zm0 0c4 0 7-2 8-5-3 0-6 1-8 5zm0 0c-2-3-2-8 0-12 2 4 2 9 0 12z\"/>", "agenda": "<rect x=\"4\" y=\"5\" width=\"16\" height=\"15\" rx=\"3\"/><path d=\"M4 10h16M9 3v4M15 3v4\"/><circle cx=\"15\" cy=\"15\" r=\"1.3\" fill=\"currentColor\"/>", "tests": "<rect x=\"6\" y=\"4\" width=\"12\" height=\"17\" rx=\"2.5\"/><path d=\"M9.5 4V3h5v1M9 13l2 2 4-4\"/>", "follow": "<path d=\"M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5\"/>", "apply": "<path d=\"M21 3L10 14M21 3l-6.5 18-4.5-7-7-4.5z\"/>", "course": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5\"/>", "read": "<path d=\"M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5c-3-.5-6 0-8 1.5zM12 6v14.5\"/>", "mentor": "<rect x=\"9\" y=\"3\" width=\"6\" height=\"11\" rx=\"3\"/><path d=\"M5 11a7 7 0 0 0 14 0M12 18v3\"/>", "house": "<path d=\"M4 11l8-7 8 7v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z\"/><path d=\"M10 21v-6h4v6\"/>", "money": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"14\" rx=\"3\"/><path d=\"M3 10h18M16 15h2M7 6V5a2 2 0 0 1 2-2h8\"/>", "fplan": "<path d=\"M4 4v16h16M8 15l4-5 3 3 5-6\"/>", "rel1": "<circle cx=\"9\" cy=\"12\" r=\"5\"/><circle cx=\"15\" cy=\"12\" r=\"5\"/>", "family": "<path d=\"M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z\"/>", "piano": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M7.5 19v-6M12 19v-6M16.5 19v-6M6 5v8h3V5M10.5 5v8h3V5M15 5v8h3V5\"/>", "emo": "<path d=\"M3 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0\"/><path d=\"M3 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0\" opacity=\".5\"/>", "n-home": "<path d=\"M4 11l8-7 8 7v9h-5v-6H9v6H4z\"/>", "n-habits": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8 12.5l2.7 2.7L16 10\"/>", "n-night": "<path d=\"M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z\"/>", "n-week": "<rect x=\"4\" y=\"4\" width=\"7\" height=\"7\" rx=\"2\"/><rect x=\"13\" y=\"4\" width=\"7\" height=\"7\" rx=\"2\"/><rect x=\"4\" y=\"13\" width=\"7\" height=\"7\" rx=\"2\"/><rect x=\"13\" y=\"13\" width=\"7\" height=\"7\" rx=\"2\"/>", "n-learn": "<path d=\"M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z\"/>", "n-budget": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"14\" rx=\"3\"/><path d=\"M3 10h18M16 15h2\"/>", "n-profile": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 3a9 9 0 0 1 9 9\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/>", "e-ira": "<path d=\"M3 15l3-6 3 6 3-6 3 6 3-6 3 6\"/>", "e-frus": "<path d=\"M6 12c0-4 6-4 6 0s6 4 6 0-6-4-6 0-6 4-6 0z\"/>", "e-ans": "<path d=\"M3 12l2-2 2 3 2-4 2 5 2-5 2 4 2-3 2 2 2-1\"/>", "e-tri": "<path d=\"M12 4c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z\"/>", "e-cans": "<rect x=\"3\" y=\"8\" width=\"16\" height=\"9\" rx=\"2\"/><path d=\"M21 11v3M6 11v3\"/>", "e-neu": "<path d=\"M4 12h16\"/>", "e-calma": "<path d=\"M3 13c3-3 6-3 9 0s6 3 9 0\"/>", "e-feliz": "<circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4\"/>", "check": "<path d=\"M5 12.5l4.5 4.5L19 7\"/>", "flame": "<path d=\"M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.6 1 2.5 2 3 .5-3-.3-5.5.5-8z\"/>", "shield": "<path d=\"M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z\"/><path d=\"M9 12l2 2 4-4\"/>", "pause": "<path d=\"M9 5v14M15 5v14\"/>", "play": "<path d=\"M7 4.5v15l12-7.5z\" fill=\"currentColor\"/>", "refresh": "<path d=\"M20 11a8 8 0 0 0-14.3-4.9L4 8M4 3v5h5M4 13a8 8 0 0 0 14.3 4.9L20 16M20 21v-5h-5\"/>", "save": "<path d=\"M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z\"/><path d=\"M8 4v5h7V4M8 20v-6h8v6\"/>", "trash": "<path d=\"M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3\"/>", "edit": "<path d=\"M4 20h4L19 9l-4-4L4 16z\"/><path d=\"M14 6l4 4\"/>", "cloud": "<path d=\"M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z\"/>", "alert": "<path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17v.5\"/>", "trophy": "<path d=\"M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8\"/>", "timer": "<circle cx=\"12\" cy=\"13\" r=\"7.5\"/><path d=\"M12 9v4l2.5 2M10 3h4\"/>", "target": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle cx=\"12\" cy=\"12\" r=\"4.5\"/><circle cx=\"12\" cy=\"12\" r=\"1\" fill=\"currentColor\"/>", "spark": "<path d=\"M12 3c.8 4.5 4.5 8.2 9 9-4.5.8-8.2 4.5-9 9-.8-4.5-4.5-8.2-9-9 4.5-.8 8.2-4.5 9-9z\"/>", "dumbbell": "<path d=\"M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12\"/>", "coffee": "<path d=\"M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z\"/><path d=\"M16 11h1.5a2.5 2.5 0 0 1 0 5H16M9 3v3M12 3v3\"/>", "bowl": "<path d=\"M3 11h18a9 9 0 0 1-18 0zM8 7c0-1.5 1.5-1.5 1.5-3M12 7c0-1.5 1.5-1.5 1.5-3\"/>", "cutlery": "<path d=\"M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 3-3 6s1 4 3 4v8\"/>", "briefcase": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2.5\"/><path d=\"M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18\"/>", "users": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M3 20a6 6 0 0 1 12 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a5.5 5.5 0 0 1 3 5\"/>", "paw": "<circle cx=\"12\" cy=\"16\" r=\"3.5\"/><circle cx=\"6\" cy=\"11\" r=\"1.8\"/><circle cx=\"18\" cy=\"11\" r=\"1.8\"/><circle cx=\"9\" cy=\"6.5\" r=\"1.8\"/><circle cx=\"15\" cy=\"6.5\" r=\"1.8\"/>", "question": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17v.3\"/>", "diamond": "<path d=\"M6 4h12l3 5-9 11L3 9z\"/><path d=\"M3 9h18\"/>", "sprout": "<path d=\"M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 14c0-3 2.5-5 6-5 0 3-2.5 5-6 5z\"/>", "wind": "<path d=\"M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7\"/>", "sunrise": "<path d=\"M3 18h18M7 18a5 5 0 0 1 10 0M12 6v3M5.6 10.6l1.8 1.8M18.4 10.6l-1.8 1.8\"/>", "heart": "<path d=\"M12 20s-8-4.5-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.5 12 20 12 20z\"/>", "note": "<path d=\"M5 4h10l4 4v12H5z\"/><path d=\"M15 4v4h4M8 12h8M8 16h5\"/>", "dot": "<circle cx=\"12\" cy=\"12\" r=\"3\" fill=\"currentColor\"/>"};
+const EMO2ICO={"⚡": "logo", "⏱": "timer", "⏸": "pause", "🌬": "wind", "😡": "e-ira", "😤": "e-frus", "😰": "e-ans", "😔": "e-tri", "😌": "e-calma", "✅": "n-habits", "💑": "rel1", "💪": "gym", "🧠": "n-learn", "🌊": "emo", "🌱": "sprout", "💎": "diamond", "💼": "briefcase", "🔥": "flame", "🌙": "n-night", "🔄": "refresh", "🛡": "shield", "🏋": "dumbbell", "🏃": "gym", "😴": "e-cans", "💾": "save", "😐": "e-neu", "🙂": "e-calma", "😄": "e-feliz", "🤝": "users", "🐾": "paw", "❓": "question", "⚠": "alert", "💡": "n-learn", "☕": "coffee", "🍱": "bowl", "🍽": "cutlery", "🌮": "spark", "☁": "cloud", "✏": "edit", "🏠": "n-home", "📅": "agenda", "📚": "read", "💰": "money", "📊": "fplan", "🌅": "sunrise", "💛": "heart", "⏰": "wake", "🧘": "medit", "📝": "note", "🔁": "follow", "🎯": "target", "🎓": "course", "📖": "read", "🎙": "mentor", "🧹": "house", "📞": "family", "🎹": "piano", "⭐": "spark", "🗑": "trash", "🕯": "spark", "🏆": "trophy", "▶": "play"};
+const EMO_RE=/(?:[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2B50}\u{23F0}-\u{23FF}\u{25B6}\u{2705}\u{2753}\u{270F}]\uFE0F?)\s?/gu;
+function ic(k,cls){return '<svg class="ico'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" aria-hidden="true">'+(ICO[k]||ICO.spark)+'</svg>';}
+function icx(v){if(!v)return 'spark';if(ICO[v])return v;const b=String(v).replace(/\uFE0F/g,'').trim();return EMO2ICO[b]||'spark';}
+function noEmo(t){return String(t==null?'':t).replace(EMO_RE,'').trim();}
+const PICK_ICONS=['spark','target','apply','course','read','mentor','gym','dumbbell','medit','wake','agenda','tests','follow','house','money','fplan','rel1','family','users','piano','emo','heart','coffee','paw','sprout','diamond','briefcase','note','timer','trophy'];
+function buildIconPicker(sel){const el=G('hm-icons');if(!el)return;
+  el.innerHTML=PICK_ICONS.map(k=>`<button type="button" class="ipk ${k===sel?'on':''}" onclick="pickIcon('${k}',this)" aria-label="${k}">${ic(k)}</button>`).join('');}
+function pickIcon(k,b){G('hm-icon').value=k;document.querySelectorAll('.ipk').forEach(x=>x.classList.toggle('on',x===b));}
+// ════════════════════════════════════════════
+// CORE HABITS — v6 · modo búsqueda de empleo (ordenados por bloque del día)
+// ════════════════════════════════════════════
+const BLOCKS = [
+  {id:'manana',   ico:'sunrise',  name:'Arranque · mañana'},
+  {id:'carrera',  ico:'briefcase',name:'Búsqueda de empleo'},
+  {id:'mente',    ico:'n-learn',  name:'Aprendizaje'},
+  {id:'hogar',    ico:'n-home',   name:'Hogar y finanzas'},
+  {id:'conexion', ico:'heart',    name:'Conexión y cierre del día'},
+];
 const CORE = [
-  {id:'wake', name:'Levantada Temprana',      sub:'Antes de las 6:30 AM',         icon:'⏰', bg:'rgba(255,71,87,.14)',  xp:100, xpMin:50, area:'Cuerpo',     period:'daily'},
-  {id:'gym',  name:'Entrenamiento',            sub:'Fuerza, cardio o híbrido',      icon:'🏋️', bg:'rgba(255,71,87,.14)',  xp:150, xpMin:80, area:'Cuerpo',     period:'daily'},
-  {id:'door', name:'Protocolo Llegada',        sub:'Transición emocional 6 PM',     icon:'🚪', bg:'rgba(168,85,247,.14)', xp:80,  xpMin:40, area:'Emocion',    period:'daily'},
-  {id:'rel1', name:'Tiempo de calidad',        sub:'Sin celular, con mi esposa',    icon:'💑', bg:'rgba(46,213,115,.12)', xp:100, xpMin:50, area:'Relaciones', period:'daily'},
-  {id:'rel2', name:'Paseo con las perritas',   sub:'Presente, sin apuro',           icon:'🐾', bg:'rgba(46,213,115,.12)', xp:60,  xpMin:30, area:'Relaciones', period:'daily'},
-  {id:'night',name:'Checklist Nocturno',       sub:'Plan del día siguiente',        icon:'🌙', bg:'rgba(108,99,255,.18)', xp:150, xpMin:70, area:'Mente',      period:'daily'},
-  {id:'food', name:'Presupuesto Comida',       sub:'Dentro de 100k esta semana',    icon:'💰', bg:'rgba(255,215,0,.12)',  xp:60,  xpMin:30, area:'Finanzas',   period:'daily'},
+  {id:'wake',   block:'manana',   name:'Levantada temprana',            sub:'Antes de las 6:30 AM · celular fuera de la cama',   icon:'wake', bg:'rgba(255,71,87,.14)',  xp:100, xpMin:50, area:'Cuerpo',     period:'daily'},
+  {id:'gym',    block:'manana',   name:'Actividad física',              sub:'Correr, fuerza o híbrido · mínimo 20 min',          icon:'gym', bg:'rgba(255,71,87,.14)',  xp:150, xpMin:80, area:'Cuerpo',     period:'daily'},
+  {id:'medit',  block:'manana',   name:'Meditar 10–15 min',             sub:'Puede ser en 2–3 bloques a lo largo del día',      icon:'medit', bg:'rgba(168,85,247,.14)', xp:80,  xpMin:40, area:'Emocion',    period:'daily'},
+  {id:'agenda', block:'manana',   name:'Revisar agenda del día',        sub:'Entrevistas, horas y links confirmados',           icon:'agenda', bg:'rgba(255,107,53,.14)', xp:60,  xpMin:30, area:'Carrera',    period:'daily'},
+  {id:'tests',  block:'carrera',  name:'Pruebas y evaluaciones',        sub:'Prioridad #1 si hay pendientes · si no hay, marca ~', icon:'tests', bg:'rgba(255,107,53,.14)', xp:150, xpMin:60, area:'Carrera',    period:'daily'},
+  {id:'follow', block:'carrera',  name:'Seguimiento a vacantes',        sub:'Revisar estados y escribir a reclutadores',        icon:'follow', bg:'rgba(255,107,53,.14)', xp:100, xpMin:50, area:'Carrera',    period:'daily'},
+  {id:'apply',  block:'carrera',  name:'Aplicar a 3 vacantes',          sub:'Operaciones · Customer Success · Account Mgmt',    icon:'apply', bg:'rgba(255,107,53,.14)', xp:150, xpMin:70, area:'Carrera',    period:'daily'},
+  {id:'course', block:'mente',    name:'Avanzar 1 módulo de curso',     sub:'Aprendizaje autónomo · un módulo o curso más',     icon:'course', bg:'rgba(55,66,250,.14)',  xp:120, xpMin:60, area:'Mente',      period:'daily'},
+  {id:'read',   block:'mente',    name:'Lectura + envío a Claude',      sub:'Recap: idea principal → aplicación concreta',      icon:'read', bg:'rgba(55,66,250,.14)',  xp:100, xpMin:50, area:'Mente',      period:'daily'},
+  {id:'mentor', block:'mente',    name:'Aprendizaje de un mentor',      sub:'Compartir con Claude una idea aplicable',          icon:'mentor', bg:'rgba(55,66,250,.14)',  xp:80,  xpMin:40, area:'Mente',      period:'daily'},
+  {id:'house',  block:'hogar',    name:'Quehaceres del hogar',          sub:'Oficio o mantenimiento pendiente',                 icon:'house', bg:'rgba(46,213,115,.12)', xp:70,  xpMin:35, area:'Relaciones', period:'daily'},
+  {id:'money',  block:'hogar',    name:'Revisar gastos del día',        sub:'Registrar y comparar contra el plan',              icon:'money', bg:'rgba(255,215,0,.12)',  xp:80,  xpMin:40, area:'Finanzas',   period:'daily'},
+  {id:'fplan',  block:'hogar',    name:'Plan de organización financiera', sub:'1 vez por semana · presupuesto y ajustes',       icon:'fplan', bg:'rgba(255,215,0,.12)',  xp:150, xpMin:70, area:'Finanzas',   period:'weekly'},
+  {id:'rel1',   block:'conexion', name:'Tiempo de calidad con mi esposa', sub:'Sin celular · presente',                        icon:'rel1', bg:'rgba(46,213,115,.12)', xp:100, xpMin:50, area:'Relaciones', period:'daily'},
+  {id:'family', block:'conexion', name:'Contactar a un familiar',       sub:'Alguien que aprecio y no contacto hace semanas',  icon:'family', bg:'rgba(46,213,115,.12)', xp:120, xpMin:60, area:'Relaciones', period:'weekly'},
+  {id:'piano',  block:'conexion', name:'Piano 10 min',                  sub:'Práctica mínima diaria',                           icon:'piano', bg:'rgba(55,66,250,.14)',  xp:70,  xpMin:35, area:'Mente',      period:'daily'},
+  {id:'emo',    block:'conexion', name:'Anotar mis emociones',          sub:'Se marca solo al registrar en la pestaña Emoción', icon:'emo', bg:'rgba(168,85,247,.14)', xp:60,  xpMin:30, area:'Emocion',    period:'daily'},
 ];
 
 // Tips por hábito para la vista semanal
 const TIPS = {
-  wake:  'Deja el celular fuera de la habitación y programa la alarma con el plan del día visible. La fricción del Instagram matutino desaparece si el teléfono no está al alcance.',
-  gym:   'Decide el entrenamiento la noche anterior en el Checklist Nocturno. Tu fricción real no es la ropa — es no tener el plan decidido cuando suena la alarma.',
-  door:  'Activa el protocolo ANTES de abrir la puerta, no después del detonante. 3 respiraciones en el ascensor cambian cómo entras.',
-  rel1:  'Define una franja fija sin pantallas (ej: 8:00–8:30 PM en la sala). El espacio de conexión es la sala, no la cama con el celular.',
-  rel2:  'Reencuadra el paseo: no es tiempo perdido de la mañana, es tu descompresión y su momento contigo. Ponle un podcast si ayuda.',
-  night: 'Ancla el checklist a un hábito existente: "después de lavar los platos, abro SOP". Los hábitos anclados sobreviven a los días difíciles.',
-  food:  'Registra el gasto EN EL MOMENTO de pagar, no al final del día. El registro inmediato crea conciencia antes del siguiente gasto.',
+  wake:   'Deja el celular fuera de la habitación. Sin horario laboral, la hora de levantarte ES tu horario laboral: defiéndela igual.',
+  gym:    'Hazlo antes de abrir el correo. Si lo dejas para después, las vacantes y entrevistas se lo comen.',
+  medit:  'No necesitas 15 min seguidos: 5 al despertar, 5 antes de una entrevista y 5 en la tarde cuentan.',
+  agenda: 'Revisa la agenda antes de aplicar a nada: las entrevistas del día definen cuánto tiempo real tienes.',
+  tests:  'Una prueba pendiente vale más que 3 aplicaciones nuevas: ya estás dentro del proceso. Hazla primero.',
+  follow: 'Ten una lista de procesos abiertos con fecha del último contacto. Más de 5 días sin respuesta = mensaje de seguimiento.',
+  apply:  'Calidad sobre volumen: 3 aplicaciones con CV ajustado a la vacante rinden más que 10 genéricas.',
+  course: 'Agenda el módulo como si fuera una reunión. El aprendizaje autónomo muere cuando no tiene hora.',
+  read:   'Estructura el recap: idea principal, por qué importa, un ejemplo y cómo lo aplicas. Un solo tema.',
+  mentor: 'Quédate con UNA idea por mentor y dila en una frase. Si no cabe en una frase, aún no la entendiste.',
+  house:  'Elige una sola tarea del hogar por día. Hecho es mejor que perfecto.',
+  money:  'Registra el gasto en el momento de pagar, no al final del día. Sin ingreso fijo, cada peso visible cuenta.',
+  fplan:  'Hazlo el mismo día cada semana (ej. domingo): runway en meses, gastos fijos, recortes y meta de la semana.',
+  rel1:   'Define una franja fija sin pantallas. Estar en casa todo el día no es lo mismo que tiempo de calidad.',
+  family: 'Ten una lista de 6–8 personas y ve rotando. Un audio de 2 minutos también cuenta.',
+  piano:  'Deja el piano a la vista y practica justo después de un hábito fijo (ej. después del almuerzo).',
+  emo:    'Registra la emoción en el momento, no al final del día: el detonante se olvida rápido.',
   _custom: 'Vincula este hábito a uno que ya haces todos los días. Los hábitos nuevos sobreviven cuando tienen un ancla.'
 };
 
@@ -680,7 +846,7 @@ function load(){
 function archiveDay(dateStr){
   if(!dateStr) return;
   const all=[...CORE,...(S.customHabits||[])];
-  const dueList=all.filter(h=>habitDueOn(h,dateStr));
+  const dueList=all.filter(h=>habitDueOn(h,dateStr)&&(h.period==='daily'||!h.period||S.habits[h.id]));
   const done=dueList.filter(h=>S.habits[h.id]).length;
   S.history[dateStr]={
     habits:{...S.habits},
@@ -723,21 +889,21 @@ function confirmReset(){
     document.querySelectorAll('[id^="wk"]').forEach(b=>{b.style.background='';b.style.borderColor='';b.style.color='';});
     const wc=G('wk-chosen'); if(wc) wc.textContent='Sin seleccionar arriba';
     document.querySelectorAll('.ci').forEach(c=>c.classList.remove('chk'));
-    const btn=G('btn-cl'); if(btn){btn.textContent='🌙 Completar checklist — +150 XP';btn.style.background='';btn.disabled=false;}
+    const btn=G('btn-cl'); if(btn){btn.textContent='Completar checklist — +150 XP';btn.style.background='';btn.disabled=false;}
     save(); renderHabits(); updateHomeUI();
-    toast('Hábitos reiniciados 🔄','🔄',0);
+    toast('Hábitos reiniciados ','refresh',0);
   }
 }
 
 // ════════════════════════════════════════════
 // XP / TOAST
 // ════════════════════════════════════════════
-function addXP(a,area){S.xp+=a;S.todayXP+=a;if(area&&S.areas[area]!==undefined)S.areas[area]+=a;updateHomeUI();save();}
+function addXP(a,area){S.xp+=a;S.todayXP+=a;if(area){if(!S.areas)S.areas={};if(S.areas[area]===undefined)S.areas[area]=0;S.areas[area]+=a;}updateHomeUI();save();}
 function floatXP(a){const e=document.createElement('div');e.className='xpfl';e.textContent='+'+a+' XP';e.style.cssText='left:'+(50+Math.random()*180)+'px;top:40%';G('app').appendChild(e);setTimeout(()=>e.remove(),1000);}
 let tT;
-function toast(msg,icon='⚡',xp=0,area=null){
+function toast(msg,icon='logo',xp=0,area=null){
   if(xp>0){addXP(xp,area);floatXP(xp);}
-  G('ti').textContent=icon||'⚡';G('tm').textContent=msg;
+  G('ti').innerHTML=ic(icx(icon||'logo'));G('tm').textContent=noEmo(msg);
   G('tx').textContent=xp>0?'+'+xp+' XP':'';
   const t=G('toast');t.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),2800);
 }
@@ -750,6 +916,7 @@ function nav(n){
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   const s=G('s-'+n),b=G('n-'+n);
   if(s)s.classList.add('active');if(b)b.classList.add('active');
+  scrollP=s&&s.scrollHeight>s.clientHeight?s.scrollTop/(s.scrollHeight-s.clientHeight):0;if(typeof paintAmb==='function')paintAmb();
   if(n==='habitos')renderHabits();
   if(n==='progreso')renderProgress();
   if(n==='budget')renderBudget();
@@ -767,12 +934,12 @@ function goOb(n){
   if(n===3){const nm=G('ob-name')?.value?.trim();if(nm)S.userName=nm;}
   if(n===4){const id=G('ob-id')?.value?.trim();if(id)S.identity=id;buildObHabits();}
 }
-function previewName(){const v=G('ob-name')?.value||'Cristian';G('name-preview').textContent=(v||'Cristian')+' 👋';}
+function previewName(){const v=G('ob-name')?.value||'Cristian';G('name-preview').textContent=(v||'Cristian');}
 function buildObHabits(){
   const el=G('ob-habits-list');if(!el)return;
   el.innerHTML=CORE.map(h=>`
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px;display:flex;align-items:center;gap:12px">
-      <div style="width:38px;height:38px;border-radius:11px;background:${h.bg};display:flex;align-items:center;justify-content:center;font-size:19px">${h.icon}</div>
+      <div style="width:38px;height:38px;border-radius:11px;background:${h.bg};display:flex;align-items:center;justify-content:center;font-size:19px;color:#fff">${ic(icx(h.icon))}</div>
       <div style="flex:1"><div style="font-weight:600;font-size:13px">${h.name}</div><div style="font-size:11px;color:var(--text2)">${h.sub}</div></div>
       <span class="tag t-gld" style="font-size:9px">+${h.xp}</span>
     </div>`).join('');
@@ -784,14 +951,14 @@ function activateSOP(){
   G('onboarding').style.display='none';
   const m=G('main');m.style.display='flex';m.style.flexDirection='column';m.style.height='100%';m.style.position='relative';
   buildAreasRow();renderHabits();renderBudget();updateHomeUI();
-  toast('⚡ Sistema activado — Día 1','⚡',50,'Mente');
+  toast('Sistema activado — Día 1','logo',50,'Mente');
 }
 
 // ════════════════════════════════════════════
 // HOME
 // ════════════════════════════════════════════
 const AXIS_MSGS=[
-  "Bienvenido. El checklist nocturno es tu hábito más importante — complétalo esta noche.",
+  "Bienvenido. Hoy tu trabajo es conseguir trabajo: agenda, pruebas pendientes y 3 aplicaciones de calidad.",
   "Tu racha sigue activa. La consistencia supera a la perfección.",
   "Llevas varios días. Ya no estás intentando cambiar — ya estás cambiando.",
   "Revisa tu pestaña Semana: ahí está lo que el sistema detectó que puedes mejorar.",
@@ -804,13 +971,13 @@ function greeting(){
 function updateHomeUI(){
   const lv=getLv(S.xp),pct=lvPct(S.xp);
   if(G('h-greet'))G('h-greet').textContent=greeting();
-  if(G('h-name'))G('h-name').textContent=(S.userName||'Cristian')+' 👋';
+  if(G('h-name'))G('h-name').textContent=(S.userName||'Cristian');
   if(G('h-lvl'))G('h-lvl').textContent='Lv.'+lv.n;
   if(G('h-xp-txt'))G('h-xp-txt').textContent=S.xp.toLocaleString()+' / '+lv.max.toLocaleString()+' XP';
   if(G('h-xpbar'))G('h-xpbar').style.width=pct+'%';
   if(G('h-streak'))G('h-streak').textContent=S.streak;
   if(G('h-txp'))G('h-txp').textContent=S.todayXP;
-  if(G('h-flame'))G('h-flame').textContent=S.streak>=30?'🔥🔥':S.streak>=3?'🔥':'🕯️';
+  if(G('h-flame')){const f=G('h-flame');f.innerHTML=ic(S.streak>=3?'flame':'spark');f.style.opacity=S.streak>=3?1:.6;f.style.color=S.streak>=30?'var(--orange)':'#fff';}
   if(G('h-axis'))G('h-axis').textContent=AXIS_MSGS[Math.min(AXIS_MSGS.length-1,Math.floor(S.xp/300))];
   if(G('edit-name'))G('edit-name').value=S.userName;
   buildWeekGrid();updateAreaRings();updateSyncBadge();
@@ -858,12 +1025,12 @@ function buildWeekGrid(){
 }
 
 function buildAreasRow(){
-  const defs=[{id:'Cuerpo',icon:'💪',c:'#FF4757'},{id:'Mente',icon:'🧠',c:'#3742FA'},{id:'Emocion',icon:'🌊',c:'#A855F7'},{id:'Relaciones',icon:'🌱',c:'#2ED573'},{id:'Finanzas',icon:'💎',c:'#FFD700'}];
+  const defs=[{id:'Cuerpo',icon:'gym',c:'#FF4757'},{id:'Mente',icon:'n-learn',c:'#3742FA'},{id:'Emocion',icon:'emo',c:'#A855F7'},{id:'Relaciones',icon:'sprout',c:'#2ED573'},{id:'Finanzas',icon:'diamond',c:'#FFD700'},{id:'Carrera',icon:'briefcase',c:'#FF6B35'}];
   const circ=125.6;
   G('arw').innerHTML=defs.map(a=>`
     <div class="arc"><div class="arring">
       <svg viewBox="0 0 48 48"><circle class="ar-bg" cx="24" cy="24" r="20"/><circle class="ar-fill" id="ring-${a.id}" cx="24" cy="24" r="20" stroke="${a.c}" style="stroke-dasharray:${circ};stroke-dashoffset:${circ}"/></svg>
-      <div class="ar-ic">${a.icon}</div></div><div class="ar-lbl">${a.id}</div></div>`).join('');
+      <div class="ar-ic">${ic(icx(a.icon))}</div></div><div class="ar-lbl">${a.id}</div></div>`).join('');
 }
 function updateAreaRings(){
   const circ=125.6;
@@ -876,20 +1043,27 @@ function updateAreaRings(){
 const PERIOD_LABEL={daily:'Diario',weekly:'Semanal',monthly:'Mensual'};
 const PERIOD_TAG={daily:'t-sop',weekly:'t-ora',monthly:'t-gld'};
 
+// Semanal/mensual: se puede cumplir cualquier día del periodo; deja de aparecer cuando ya se hizo.
+function doneInPeriod(h,dateStr){
+  if(h.period!=='weekly'&&h.period!=='monthly')return false;
+  const d=new Date(dateStr+'T12:00:00');
+  const start=h.period==='weekly'
+    ? new Date(d.getTime()-((d.getDay()+6)%7)*86400000)
+    : new Date(d.getFullYear(),d.getMonth(),1,12);
+  const s0=start.toISOString().slice(0,10);
+  return Object.keys(S.history||{}).some(k=>k>=s0&&k<dateStr&&S.history[k]?.habits?.[h.id]);
+}
 function habitDueOn(h,dateStr){
   if(h.period==='daily'||!h.period)return true;
-  const d=new Date(dateStr+'T12:00:00');
-  if(h.period==='weekly')return d.getDay()===1;
-  if(h.period==='monthly')return d.getDate()===1;
-  return true;
+  return !doneInPeriod(h,dateStr);
 }
 function habitDue(h){return habitDueOn(h,colDate());}
 
 function renderHabitItem(h,isCustom){
   const st=S.habits[h.id],isD=st==='done',isM=st==='min',due=habitDue(h);
   const pT=`<span class="tag ${PERIOD_TAG[h.period]||'t-sop'} period-badge">${PERIOD_LABEL[h.period]||'Diario'}</span>`;
-  return `<div class="hi ${isD?'done':''} ${isM?'mini':''}">
-    <div class="hi-icon" style="background:${h.bg||'var(--card2)'}">${h.icon||'⭐'}</div>
+  return `<div class="hi ${isD?'done':''} ${isM?'mini':''} ${h.id===lastPop?'pop':''}">
+    <div class="hi-icon">${ic(icx(h.icon))}</div>
     <div class="hi-info">
       <div class="hi-name">${h.name}</div>
       <div class="hi-sub">${h.sub||''}</div>
@@ -897,14 +1071,15 @@ function renderHabitItem(h,isCustom){
         ${pT}
         ${isD?`<span class="tag t-grn" style="font-size:10px">✓ +${h.xp}</span>`:''}
         ${isM?`<span class="tag t-gld" style="font-size:10px">~ +${h.xpMin}</span>`:''}
-        ${!due&&!st?`<span class="tag t-neu" style="font-size:10px">No toca hoy</span>`:''}
+        ${!due&&!st?`<span class="tag t-grn" style="font-size:10px">✓ Hecho ${h.period==='monthly'?'este mes':'esta semana'}</span>`:''}
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:4px">
-      ${isCustom?`<div style="display:flex;flex-direction:column"><button onclick="editHabit('${h.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;padding:3px">✏️</button><button onclick="deleteHabit('${h.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;padding:3px">🗑️</button></div>`:''}
-      ${!st&&due?`<div style="display:flex;flex-direction:column;gap:4px">
-        <button class="hbtn" onclick="doHabit('${h.id}','done',${h.xp},'${h.area}')" style="background:var(--green);color:#fff">✓</button>
-        <button class="hbtn" onclick="doHabit('${h.id}','min',${h.xpMin},'${h.area}')" style="background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.3);color:var(--gold)">~</button>
+      ${isCustom?`<div style="display:flex;flex-direction:column"><button onclick="editHabit('${h.id}')" class="icobtn" aria-label="Editar">${ic('edit')}</button><button onclick="deleteHabit('${h.id}')" class="icobtn" aria-label="Eliminar">${ic('trash')}</button></div>`:''}
+      ${!st&&due?`<button class="hnow" onclick="pomoOpen('${h.id}')" aria-label="Hacerlo ahora con Pomodoro">${ic('play')} Ahora</button>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+        <button class="hck" onclick="doHabit('${h.id}','done',${h.xp},'${h.area}')" aria-label="Completar">✓</button>
+        <button class="hmin" onclick="doHabit('${h.id}','min',${h.xpMin},'${h.area}')" aria-label="Versión mínima">~ mín</button>
       </div>`
       :st?`<div style="width:32px;height:32px;border-radius:50%;background:${isD?'var(--green)':'var(--gold)'};display:flex;align-items:center;justify-content:center;color:${isD?'#fff':'#000'};font-size:15px">${isD?'✓':'~'}</div>`
       :`<div style="width:32px;height:32px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3)">—</div>`}
@@ -920,7 +1095,12 @@ function renderHabits(){
     const days=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
     sub.textContent=days[colNow().getUTCDay()]+' · '+done+' de '+all.length+' completados';
   }
-  const l=G('habits-list');if(l)l.innerHTML=CORE.map(h=>renderHabitItem(h,false)).join('');
+  const l=G('habits-list');
+  if(l)l.innerHTML=BLOCKS.map(b=>{
+    const hs=CORE.filter(h=>h.block===b.id);if(!hs.length)return '';
+    const bd=hs.filter(h=>S.habits[h.id]||!habitDue(h)).length;
+    return `<div class="sl" style="display:flex;justify-content:space-between;margin-top:6px"><span style="display:flex;align-items:center;gap:7px">${ic(b.ico)}${b.name}</span><span style="color:var(--text3)">${bd}/${hs.length}</span></div>`+hs.map(h=>renderHabitItem(h,false)).join('');
+  }).join('');
   const cl=G('custom-habits-list'),nc=G('no-custom');
   const ch=S.customHabits||[];
   if(cl){
@@ -929,24 +1109,32 @@ function renderHabits(){
   }
 }
 
+let lastPop=null;
 function doHabit(id,type,xp,area){
   if(S.habits[id])return;
+  lastPop=id;setTimeout(()=>{lastPop=null;},700);
   S.habits[id]=type;S.habitsDone++;
   if(id==='gym'&&type==='done')S.gymThisWeek++;
   addXP(xp,area);floatXP(xp);
   const h=[...CORE,...(S.customHabits||[])].find(x=>x.id===id);
-  toast(type==='done'?(h?.name||'Hábito')+' ✓':'Versión mínima — racha activa',type==='done'?'✅':'🛡️',0);
+  toast(type==='done'?(h?.name||'Hábito')+' ✓':'Versión mínima — racha activa',type==='done'?'n-habits':'shield',0);
   renderHabits();save();
 }
 
+function autoHabit(id){
+  if(S.habits[id])return;
+  const h=CORE.find(x=>x.id===id);if(!h)return;
+  S.habits[id]='done';S.habitsDone++;addXP(h.xp,h.area);
+  renderHabits();
+}
 function survival(){
-  if(S.survivalUsed){toast('Ya activo hoy','🛡️',0);return;}
+  if(S.survivalUsed){toast('Ya activo hoy','shield',0);return;}
   S.survivalUsed=true;
   [...CORE,...(S.customHabits||[])].filter(h=>habitDue(h)).forEach(h=>{
     if(!S.habits[h.id]){S.habits[h.id]='min';S.habitsDone++;addXP(h.xpMin,h.area);}
   });
   addXP(250,null);floatXP(250);
-  toast('Modo Supervivencia — Racha protegida 🛡️','🛡️',0);
+  toast('Modo Supervivencia — Racha protegida ','shield',0);
   renderHabits();save();
 }
 
@@ -954,11 +1142,11 @@ function survival(){
 // CUSTOM HABITS
 // ════════════════════════════════════════════
 let editingId=null;
-const BG_MAP={Cuerpo:'rgba(255,71,87,.14)',Mente:'rgba(55,66,250,.14)',Emocion:'rgba(168,85,247,.14)',Relaciones:'rgba(46,213,115,.12)',Finanzas:'rgba(255,215,0,.12)'};
+const BG_MAP={Cuerpo:'rgba(255,71,87,.14)',Mente:'rgba(55,66,250,.14)',Emocion:'rgba(168,85,247,.14)',Relaciones:'rgba(46,213,115,.12)',Finanzas:'rgba(255,215,0,.12)',Carrera:'rgba(255,107,53,.14)'};
 function openHabitModal(){
   editingId=null;
   G('hm-title').textContent='Nuevo hábito';G('hm-save').textContent='Guardar hábito';
-  G('hm-name').value='';G('hm-icon').value='⭐';G('hm-period').value='daily';
+  G('hm-name').value='';G('hm-icon').value='spark';buildIconPicker('spark');G('hm-period').value='daily';
   G('hm-xp').value='80';G('hm-xpmin').value='40';G('hm-area').value='Relaciones';
   G('habitModal').classList.add('show');
 }
@@ -967,7 +1155,7 @@ function editHabit(id){
   const h=(S.customHabits||[]).find(x=>x.id===id);if(!h)return;
   editingId=id;
   G('hm-title').textContent='Editar hábito';G('hm-save').textContent='Actualizar';
-  G('hm-name').value=h.name;G('hm-icon').value=h.icon||'⭐';
+  G('hm-name').value=h.name;G('hm-icon').value=icx(h.icon);buildIconPicker(icx(h.icon));
   G('hm-period').value=h.period||'daily';G('hm-xp').value=h.xp;G('hm-xpmin').value=h.xpMin;
   G('hm-area').value=h.area||'Cuerpo';
   G('habitModal').classList.add('show');
@@ -976,23 +1164,23 @@ function deleteHabit(id){
   if(!confirm('¿Eliminar este hábito?'))return;
   S.customHabits=(S.customHabits||[]).filter(h=>h.id!==id);
   delete S.habits[id];save();renderHabits();
-  toast('Hábito eliminado','🗑️',0);
+  toast('Hábito eliminado','trash',0);
 }
 function saveHabit(){
   const name=G('hm-name').value.trim();
-  if(!name){toast('Escribe un nombre','⚠️',0);return;}
-  const icon=G('hm-icon').value.trim()||'⭐';
+  if(!name){toast('Escribe un nombre','alert',0);return;}
+  const icon=G('hm-icon').value||'spark';
   const period=G('hm-period').value;
   const xp=Math.max(10,Math.min(500,parseInt(G('hm-xp').value)||80));
   const xpMin=Math.max(5,Math.min(250,parseInt(G('hm-xpmin').value)||40));
   const area=G('hm-area').value;
   if(editingId){
     const i=(S.customHabits||[]).findIndex(h=>h.id===editingId);
-    if(i>=0){S.customHabits[i]={...S.customHabits[i],name,icon,period,xp,xpMin,area,bg:BG_MAP[area],sub:PERIOD_LABEL[period]};toast('Actualizado ✓','✅',0);}
+    if(i>=0){S.customHabits[i]={...S.customHabits[i],name,icon,period,xp,xpMin,area,bg:BG_MAP[area],sub:PERIOD_LABEL[period]};toast('Actualizado ✓','n-habits',0);}
   }else{
     if(!S.customHabits)S.customHabits=[];
     S.customHabits.push({id:'ch_'+Date.now(),name,icon,period,xp,xpMin,area,bg:BG_MAP[area],sub:PERIOD_LABEL[period]});
-    toast('Hábito creado ✓','✅',0);
+    toast('Hábito creado ✓','n-habits',0);
   }
   closeHabitModal();save();renderHabits();
 }
@@ -1005,7 +1193,7 @@ function pickWk(name,btn){
   btn.style.background='var(--sop-dim)';btn.style.borderColor='var(--sop)';btn.style.color='var(--sop2)';
   S.workout=name;
   const wc=G('wk-chosen');if(wc)wc.textContent=name;
-  toast('Entrenamiento: '+name,'⚡',0);save();
+  toast('Entrenamiento: '+name,'logo',0);save();
 }
 function chk(id,xp,area,msg){
   if(S.checklist[id])return;
@@ -1015,17 +1203,17 @@ function chk(id,xp,area,msg){
 }
 function saveLearn(){
   const i=G('learn-input');const t=i?.value?.trim();
-  if(!t){toast('Escribe algo primero','⚠️',0);return;}
+  if(!t){toast('Escribe algo primero','alert',0);return;}
   if(!S.learns)S.learns=[];
   S.learns.unshift({id:uid(),date:colDate(),time:colTime(),text:t,synced:false});
   i.value='';save();renderLearnLog();
-  toast('Guardado 💾 → pestaña Aprender','💾',30,'Mente');
+  toast('Guardado → pestaña Aprender','save',30,'Mente');
 }
 function finishChecklist(){
-  if(S.habits['night']){toast('Ya completado esta noche','🌙',0);return;}
+  if(S.habits['night']){toast('Ya completado esta noche','n-night',0);return;}
   S.habits['night']='done';S.habitsDone++;
   addXP(150,'Mente');floatXP(150);
-  toast('Checklist completado 🌙','🌙',0);
+  toast('Checklist completado ','n-night',0);
   const b=G('btn-cl');if(b){b.textContent='✓ Completado';b.style.background='var(--green)';b.disabled=true;}
   renderHabits();save();
 }
@@ -1042,8 +1230,8 @@ function renderLearnLog(){
         <div class="learn-date">${fmtDate(l.date)}</div>
         <div style="display:flex;align-items:center;gap:8px">
           <span style="font-size:11px;color:var(--text3)">${l.time||''}</span>
-          ${l.synced?'<span style="font-size:10px;color:var(--green)">☁️</span>':''}
-          <button onclick="delLearn(${i})" style="background:none;border:none;cursor:pointer;font-size:13px;color:var(--text3)">🗑️</button>
+          ${l.synced?'<span style="font-size:12px;color:var(--green);display:inline-flex">'+ic('cloud')+'</span>':''}
+          <button onclick="delLearn(${i})" style="background:none;border:none;cursor:pointer;font-size:15px;color:var(--text3);display:flex" aria-label="Eliminar">${ic('trash')}</button>
         </div>
       </div>
       <div style="padding:13px 16px;font-size:14px;line-height:1.6">${l.text.replace(/\n/g,'<br>')}</div>
@@ -1067,8 +1255,9 @@ function logEmo(btn,emoji,label,intensity){
   S.emotions.push({id:uid(),emoji,label,intensity,time:colTime(),date:colDate(),trigger:null,synced:false});
   S.emoLogs++;
   addXP(50,'Emocion');floatXP(50);
+  autoHabit('emo');
   toast('Registrado: '+label+' · '+colTime(),emoji,0);
-  if(intensity<=2)setTimeout(()=>toast('Intensidad alta — ¿Protocolo STOP?','⏸️',0),1200);
+  if(intensity<=2)setTimeout(()=>toast('Intensidad alta — ¿Protocolo STOP?','pause',0),1200);
   renderEmoLog();save();
 }
 function logTrigger(btn,trigger){
@@ -1078,10 +1267,10 @@ function logTrigger(btn,trigger){
   if(S.emotions.length){
     S.emotions[S.emotions.length-1].trigger=trigger;
     S.emotions[S.emotions.length-1].synced=false;
-    toast('Detonante asociado: '+trigger,'📝',20,'Emocion');
+    toast('Detonante asociado: '+trigger,'note',20,'Emocion');
   }else{
-    S.emotions.push({id:uid(),emoji:'📝',label:'Detonante',intensity:3,time:colTime(),date:colDate(),trigger,synced:false});
-    toast('Detonante registrado: '+trigger,'📝',20,'Emocion');
+    S.emotions.push({id:uid(),emoji:'note',label:'Detonante',intensity:3,time:colTime(),date:colDate(),trigger,synced:false});
+    toast('Detonante registrado: '+trigger,'note',20,'Emocion');
   }
   renderEmoLog();save();
 }
@@ -1090,7 +1279,7 @@ function stopEmo(btn,emoji,label){
   btn.classList.add('sel');
   S.stopCount++;S.emoLogs++;
   addXP(80,'Emocion');floatXP(80);
-  S.emotions.push({id:uid(),emoji,label,intensity:label==='Bien'?5:1,time:colTime(),date:colDate(),trigger:'⏸️ STOP',synced:false});
+  S.emotions.push({id:uid(),emoji,label,intensity:label==='Bien'?5:1,time:colTime(),date:colDate(),trigger:'STOP',synced:false});
   save();
   setTimeout(()=>{G('stopEmos').style.display='none';G('stopDone').style.display='block';G('stopSkip').style.display='none';},500);
 }
@@ -1112,10 +1301,10 @@ function renderEmoLog(){
       </div>
       ${[...g.items].reverse().map(e=>`
         <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border)">
-          <span style="font-size:22px">${e.emoji}</span>
+          <span class="emo-ic">${ic(icx(e.emoji))}</span>
           <div style="flex:1">
             <div style="font-weight:600;font-size:13px">${e.label}</div>
-            <div style="font-size:11px;color:var(--text2)">${e.time}${e.trigger?' · '+e.trigger:''}</div>
+            <div style="font-size:11px;color:var(--text2)">${e.time}${e.trigger?' · '+noEmo(e.trigger):''}</div>
           </div>
           <div style="width:8px;height:8px;border-radius:50%;background:${e.intensity>=4?'var(--green)':e.intensity===3?'var(--gold)':'var(--red)'}"></div>
         </div>`).join('')}
@@ -1151,14 +1340,14 @@ function closeStop(){clearTimeout(bT);G('stopOv').classList.remove('show');const
 // ════════════════════════════════════════════
 function addSpend(){
   const i=G('spend-inp');const a=parseInt(i.value);
-  if(!a||a<=0){toast('Monto inválido','⚠️',0);return;}
+  if(!a||a<=0){toast('Monto inválido','alert',0);return;}
   i.value='';quickSpend(a,'Gasto manual');
 }
 function quickSpend(a,label){
   S.budget.spent+=a;
   S.budget.log.push({amt:a,label,time:colTime(),date:colDate()});
   const rem=Math.max(0,S.budget.max-S.budget.spent);
-  toast(S.budget.spent>S.budget.max?'Presupuesto superado ⚠️':label+' — quedan '+fmt(rem),S.budget.spent>S.budget.max?'⚠️':'💰',0);
+  toast(S.budget.spent>S.budget.max?'Presupuesto superado ':label+' — quedan '+fmt(rem),S.budget.spent>S.budget.max?'alert':'money',0);
   renderBudget();save();
 }
 function renderBudget(){
@@ -1199,7 +1388,8 @@ function renderWeek(){
     const rec=S.history[ds];
     if(!rec)return 'o'; // no data
     const s=rec.habits?.[h.id];
-    return s==='done'?'d':s==='min'?'m':'x'; // missed
+    if(s)return s==='done'?'d':'m';
+    return (h.period==='daily'||!h.period)?'x':'o'; // weekly pending ≠ missed
   }
 
   // Header row + matrix
@@ -1211,7 +1401,7 @@ function renderWeek(){
     </div>`;
     const rows=all.map(h=>`
       <div class="wm-row">
-        <div class="wm-name"><span>${h.icon}</span><span class="n">${h.name}</span></div>
+        <div class="wm-name"><span style="display:flex">${ic(icx(h.icon))}</span><span class="n">${h.name}</span></div>
         ${dates.map(ds=>{
           const st=stateOn(h,ds);
           const ic=st==='d'?'✓':st==='m'?'~':st==='x'?'✗':'·';
@@ -1254,7 +1444,7 @@ function renderWeek(){
   const tipsEl=G('sem-tips');
   if(!stats.length){
     if(missedEl)missedEl.innerHTML='<div class="card" style="text-align:center;color:var(--text3);font-size:13px">Aún no hay días archivados. La matriz se llena a medida que pasan los días.</div>';
-    if(tipsEl)tipsEl.innerHTML='<div class="card" style="font-size:13px;color:var(--text2)">💡 Completa hábitos hoy y vuelve mañana: AXIS analizará tu semana y te dirá exactamente qué reforzar.</div>';
+    if(tipsEl)tipsEl.innerHTML='<div class="card" style="font-size:13px;color:var(--text2)">Completa hábitos hoy y vuelve mañana: AXIS analizará tu semana y te dirá exactamente qué reforzar.</div>';
     return;
   }
 
@@ -1265,20 +1455,20 @@ function renderWeek(){
         <div class="card" style="margin-bottom:8px;border-color:rgba(255,71,87,.25)">
           <div class="crow">
             <div style="display:flex;align-items:center;gap:10px">
-              <span style="font-size:22px">${s.h.icon}</span>
+              <span style="font-size:22px;display:flex">${ic(icx(s.h.icon))}</span>
               <div><div style="font-weight:600;font-size:14px">${s.h.name}</div>
               <div style="font-size:11px;color:var(--text2)">${s.done} de ${s.total} días cumplido</div></div>
             </div>
             <span class="tag t-red">${Math.round(s.rate*100)}%</span>
           </div>
         </div>`).join('')
-      : '<div class="card" style="border-color:rgba(46,213,115,.3);text-align:center"><span style="font-size:28px">🏆</span><div style="font-weight:700;color:var(--green);margin-top:6px">Semana perfecta — nada faltó</div></div>';
+      : '<div class="card" style="border-color:rgba(46,213,115,.3);text-align:center"><span style="font-size:30px;display:inline-flex;color:var(--green)">'+ic('trophy')+'</span><div style="font-weight:700;color:var(--green);margin-top:6px">Semana perfecta — nada faltó</div></div>';
   }
   if(tipsEl){
     tipsEl.innerHTML=worst.length
       ? worst.map(s=>`
         <div class="tip-card">
-          <div style="font-size:12px;font-weight:700;color:var(--orange);margin-bottom:5px">${s.h.icon} ${s.h.name}</div>
+          <div style="font-size:12px;font-weight:700;color:var(--orange);margin-bottom:5px;display:flex;align-items:center;gap:6px">${ic(icx(s.h.icon))} ${s.h.name}</div>
           <div style="font-size:13px;color:var(--text);line-height:1.55">${TIPS[s.h.id]||TIPS._custom}</div>
         </div>`).join('')
       : '<div class="tip-card"><div style="font-size:13px;line-height:1.55">Mantén el sistema: la próxima semana sube la exigencia — agrega un hábito nuevo o sube el estándar de uno existente.</div></div>';
@@ -1290,9 +1480,9 @@ function renderWeek(){
 // ════════════════════════════════════════════
 function saveName(){
   const v=G('edit-name')?.value?.trim();
-  if(!v){toast('Escribe tu nombre','⚠️',0);return;}
+  if(!v){toast('Escribe tu nombre','alert',0);return;}
   S.userName=v;save();updateHomeUI();
-  toast('Nombre: '+v,'✅',0);
+  toast('Nombre: '+v,'n-habits',0);
 }
 function renderProgress(){
   const lv=getLv(S.xp),pct=lvPct(S.xp);
@@ -1310,33 +1500,33 @@ function renderProgress(){
   if(G('sb-last'))G('sb-last').textContent='Último sync: '+(S.lastSync||'nunca');
   updateSyncBadge();
 
-  const aC={Cuerpo:'#FF4757',Mente:'#3742FA',Emocion:'#A855F7',Relaciones:'#2ED573',Finanzas:'#FFD700'};
-  const aI={Cuerpo:'💪',Mente:'🧠',Emocion:'🌊',Relaciones:'🌱',Finanzas:'💎'};
+  const aC={Cuerpo:'#FF4757',Mente:'#3742FA',Emocion:'#A855F7',Relaciones:'#2ED573',Finanzas:'#FFD700',Carrera:'#FF6B35'};
+  const aI={Cuerpo:'gym',Mente:'n-learn',Emocion:'emo',Relaciones:'sprout',Finanzas:'diamond',Carrera:'briefcase'};
   const pal=G('p-areas');
   if(pal)pal.innerHTML=Object.entries(S.areas).map(([k,v])=>{
     const p=Math.min(100,Math.round(v/12));
     return `<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:0 16px 8px">
       <div class="crow" style="margin-bottom:8px">
-        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:18px">${aI[k]}</span><span style="font-weight:600;font-size:14px">${k}</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:18px;display:flex">${ic(icx(aI[k]))}</span><span style="font-weight:600;font-size:14px">${k}</span></div>
         <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:${aC[k]}">${v} XP</span>
       </div>
       <div class="xpw"><div class="xpf" style="width:${p}%;background:${aC[k]}"></div></div>
     </div>`;}).join('');
 
   const LOG=[
-    {icon:'⚡',name:'Sistema activado',desc:'Día 1',done:S.xp>0},
-    {icon:'💑',name:'Presente',desc:'Primer hábito de Relaciones completado',done:!!S.habits['rel1']||!!S.habits['rel2']||Object.values(S.history).some(d=>d.habits?.rel1||d.habits?.rel2)},
-    {icon:'⏸️',name:'Primera pausa',desc:'Protocolo STOP 1 vez',done:S.stopCount>=1},
-    {icon:'🌙',name:'Primer checklist',desc:'Diseñaste tu mañana',done:!!S.habits['night']},
-    {icon:'🛡️',name:'Superviviente',desc:'Modo Supervivencia usado',done:S.survivalUsed},
-    {icon:'📚',name:'Primer aprendizaje',desc:'Guardado en Aprender',done:(S.learns||[]).length>0},
-    {icon:'☁️',name:'En la nube',desc:'Primer sync a Supabase',done:!!S.lastSync},
-    {icon:'🔥',name:'Racha de 7',desc:'7 días consecutivos',done:S.streak>=7},
+    {icon:'logo',name:'Sistema activado',desc:'Día 1',done:S.xp>0},
+    {icon:'rel1',name:'Presente',desc:'Primer hábito de Relaciones completado',done:!!S.habits['rel1']||!!S.habits['rel2']||Object.values(S.history).some(d=>d.habits?.rel1||d.habits?.rel2)},
+    {icon:'pause',name:'Primera pausa',desc:'Protocolo STOP 1 vez',done:S.stopCount>=1},
+    {icon:'n-night',name:'Primer checklist',desc:'Diseñaste tu mañana',done:!!S.habits['night']},
+    {icon:'shield',name:'Superviviente',desc:'Modo Supervivencia usado',done:S.survivalUsed},
+    {icon:'read',name:'Primer aprendizaje',desc:'Guardado en Aprender',done:(S.learns||[]).length>0},
+    {icon:'cloud',name:'En la nube',desc:'Primer sync a Supabase',done:!!S.lastSync},
+    {icon:'flame',name:'Racha de 7',desc:'7 días consecutivos',done:S.streak>=7},
   ];
   const ll=G('p-logros');
   if(ll)ll.innerHTML=LOG.map(l=>`
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:0 16px 8px;display:flex;align-items:center;gap:12px;opacity:${l.done?1:.35}">
-      <span style="font-size:28px;filter:${l.done?'none':'grayscale(1)'}">${l.icon}</span>
+      <span style="font-size:26px;display:flex;opacity:${l.done?1:.35}">${ic(icx(l.icon))}</span>
       <div style="flex:1"><div style="font-weight:600;font-size:14px">${l.name}</div><div style="font-size:12px;color:var(--text2)">${l.desc}</div></div>
       <span class="tag ${l.done?'t-grn':'t-neu'}">${l.done?'✓':'—'}</span>
     </div>`).join('');
@@ -1354,14 +1544,14 @@ function scheduleSyncPush(){
 
 function saveSbKey(){
   const k=G('sb-key')?.value?.trim();
-  if(!k){toast('Pega la anon key','⚠️',0);return;}
+  if(!k){toast('Pega la anon key','alert',0);return;}
   try{localStorage.setItem('sop_sb_key',k);}catch(e){}
-  toast('Clave guardada — probando conexión...','☁️',0);
+  toast('Clave guardada — probando conexión...','cloud',0);
   syncNow();
 }
 
 async function syncNow(){
-  if(!sbKey()){toast('Primero guarda la anon key','⚠️',0);return;}
+  if(!sbKey()){toast('Primero guarda la anon key','alert',0);return;}
   setSyncStatus('sync');
   try{
     await pushToSupabase();
@@ -1369,10 +1559,10 @@ async function syncNow(){
     save();
     setSyncStatus('ok');
     if(G('sb-last'))G('sb-last').textContent='Último sync: '+S.lastSync;
-    toast('Sincronizado con Supabase ☁️','☁️',0);
+    toast('Sincronizado con Supabase ','cloud',0);
   }catch(e){
     setSyncStatus('err');
-    toast('Error de sync: revisa la clave','⚠️',0);
+    toast('Error de sync: revisa la clave','alert',0);
     console.error(e);
   }
 }
@@ -1453,7 +1643,7 @@ function setSyncStatus(st){
     off:{c:'var(--text3)',t:'Sin nube',tagT:'Sin configurar',tagC:'var(--text3)'},
     sync:{c:'var(--gold)',t:'Sincronizando...',tagT:'Sincronizando',tagC:'var(--gold)'},
     ok:{c:'var(--green)',t:'En la nube',tagT:'✓ Conectado',tagC:'var(--green)'},
-    err:{c:'var(--red)',t:'Error sync',tagT:'⚠️ Error',tagC:'var(--red)'}
+    err:{c:'var(--red)',t:'Error sync',tagT:'Error',tagC:'var(--red)'}
   };
   const m=map[st]||map.off;
   if(dot)dot.style.background=m.c;
@@ -1463,9 +1653,119 @@ function setSyncStatus(st){
 function updateSyncBadge(){ setSyncStatus(sbKey()?(S.lastSync?'ok':'off'):'off'); }
 
 // ════════════════════════════════════════════
+// TEMA PREMIUM — Aurora 6:00–18:00 · Grafito vivo 18:00–6:00 · color por scroll
+// ════════════════════════════════════════════
+const THEMES={
+  aurora:{bg:['#2A2878','#4B2C8F','#6B2460','#232060'],s:[['#3634A3','#5E5CE6','#BF5AF2'],['#5E5CE6','#BF5AF2','#FF375F'],['#BF5AF2','#FF375F','#FF9F0A'],['#30247A','#5E5CE6','#64D2FF']]},
+  grafito:{bg:['#111113','#121114','#0F1210','#141210'],s:[['#2C2C2E','#0A84FF','#1C1C1E'],['#2C2C2E','#BF5AF2','#1C1C1E'],['#2C2C2E','#30D158','#1C1C1E'],['#2C2C2E','#FF9F0A','#1C1C1E']]}
+};
+function themeName(){const h=colNow().getUTCHours();return (h>=6&&h<18)?'aurora':'grafito';}
+let THEME=null,scrollP=0,ambRAF=0;
+function hx2(h){return [1,3,5].map(k=>parseInt(h.slice(k,k+2),16));}
+function mixC(a,b,t){const A=hx2(a),B=hx2(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function applyTheme(){
+  const n=themeName();
+  if(n!==THEME){THEME=n;document.documentElement.classList.toggle('night',n==='grafito');
+    const m=document.querySelector('meta[name=theme-color]');if(m)m.content=n==='grafito'?'#111113':'#2A2878';}
+  paintAmb();
+}
+function paintAmb(){
+  const T=THEMES[THEME||themeName()];const v=Math.max(0,Math.min(1,scrollP))*3;
+  const i=Math.min(2,Math.floor(v)),t=v-i;
+  const a=G('amb');if(!a)return;
+  a.style.setProperty('--ambBg',mixC(T.bg[i],T.bg[i+1],t));
+  ['ab1','ab2','ab3'].forEach((id,k)=>{const e=G(id);if(!e)return;
+    e.style.background=mixC(T.s[i][k],T.s[i+1][k],t);
+    e.style.transform='translate3d('+Math.round(Math.cos(v*1.3+k)*30)+'px,'+Math.round(Math.sin(v+k*2)*40)+'px,0)';});
+}
+function onScreenScroll(e){
+  const el=e.target;if(!el.classList||!el.classList.contains('screen'))return;
+  const max=el.scrollHeight-el.clientHeight;scrollP=max>0?el.scrollTop/max:0;
+  const sh=el.querySelector('.sh');if(sh)sh.classList.toggle('glassy',el.scrollTop>8);
+  if(!ambRAF)ambRAF=requestAnimationFrame(()=>{ambRAF=0;paintAmb();});
+}
+
+// ════════════════════════════════════════════
+// POMODORO — "Hacerlo ahora"
+// ════════════════════════════════════════════
+const POMO_DEF={wake:10,gym:30,medit:15,agenda:10,tests:60,follow:25,apply:45,course:45,read:30,mentor:20,house:25,money:15,fplan:45,rel1:45,family:20,piano:10,emo:5};
+const POMO_OPTS=[10,25,45,60];
+let pomoSel={id:null,min:25},pomoTick=null,wakeLock=null;
+function allHabits(){return [...CORE,...(S.customHabits||[])];}
+function pomoOpen(id){
+  const h=allHabits().find(x=>x.id===id);if(!h)return;
+  pomoSel={id,min:POMO_DEF[id]||25};
+  G('pp-icon').innerHTML=ic(icx(h.icon));G('pp-name').textContent=h.name;
+  const opts=[...new Set([...POMO_OPTS,pomoSel.min])].sort((a,b)=>a-b).slice(0,4);
+  if(!opts.includes(pomoSel.min))opts[3]=pomoSel.min;
+  G('pp-chips').innerHTML=opts.map(m=>`<button class="pchip ${m===pomoSel.min?'on':''}" onclick="pomoPick(${m},this)">${m}<span style="font-size:11px;font-weight:500;opacity:.8"> min</span></button>`).join('');
+  G('pp-custom').value='';G('pp-focus').checked=!!S.pomoFocus;
+  G('pomoPick').style.display='block';G('pomoRun').style.display='none';
+  G('pomoOv').classList.add('show');
+}
+function pomoPick(m,btn){pomoSel.min=m;G('pp-custom').value='';document.querySelectorAll('.pchip').forEach(b=>b.classList.toggle('on',b===btn));}
+function pomoCustom(){const v=parseInt(G('pp-custom').value,10);if(v>0){pomoSel.min=Math.min(180,v);document.querySelectorAll('.pchip').forEach(b=>b.classList.remove('on'));}}
+function pomoClose(){G('pomoOv').classList.remove('show');}
+function pomoStart(){
+  S.pomoFocus=G('pp-focus').checked;
+  const dur=pomoSel.min*60000;
+  S.pomo={id:pomoSel.id,dur,end:Date.now()+dur,paused:false,remain:dur,start:Date.now()};
+  save();pomoShowRun();
+  if(S.pomoFocus)setTimeout(()=>{location.href='shortcuts://run-shortcut?name='+encodeURIComponent('Órbita Foco');},400);
+}
+function pomoShowRun(){
+  const p=S.pomo;if(!p)return;const h=allHabits().find(x=>x.id===p.id);
+  G('pr-name').innerHTML=ic(icx(h?.icon))+' '+(h?.name||'Actividad');
+  G('pomoPick').style.display='none';G('pomoRun').style.display='flex';G('pomoOv').classList.add('show');
+  G('pr-pause').innerHTML=p.paused?ic('play')+' Seguir':ic('pause')+' Pausa';
+  clearInterval(pomoTick);pomoTick=setInterval(pomoRender,500);pomoRender();keepAwake(true);
+}
+function pomoLeft(){const p=S.pomo;if(!p)return 0;return p.paused?p.remain:Math.max(0,p.end-Date.now());}
+function pomoRender(){
+  const p=S.pomo;if(!p){clearInterval(pomoTick);return;}
+  const left=pomoLeft(),sec=Math.ceil(left/1000);
+  G('pr-time').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');
+  G('pr-ring').style.strokeDashoffset=339.3*(1-left/p.dur);
+  if(left<=0&&!p.rang){p.rang=true;save();pomoChime();
+    G('pr-lbl').textContent='¡Tiempo cumplido!';G('pr-sub').textContent='¿Terminaste o necesitas +5?';}
+  else if(left>0){G('pr-lbl').textContent=p.paused?'En pausa':'En foco';G('pr-sub').textContent='Nada más que esto';}
+}
+function pomoPause(){const p=S.pomo;if(!p)return;
+  if(p.paused){p.end=Date.now()+p.remain;p.paused=false;}else{p.remain=pomoLeft();p.paused=true;}
+  save();G('pr-pause').innerHTML=p.paused?ic('play')+' Seguir':ic('pause')+' Pausa';pomoRender();}
+function pomoAdd(m){const p=S.pomo;if(!p)return;const add=m*60000;p.dur+=add;p.rang=false;
+  if(p.paused)p.remain+=add;else p.end=Math.max(p.end,Date.now())+add;save();pomoRender();}
+function pomoEnd(){clearInterval(pomoTick);S.pomo=null;save();keepAwake(false);G('pomoOv').classList.remove('show');
+  if(S.pomoFocus)setTimeout(()=>{location.href='shortcuts://run-shortcut?name='+encodeURIComponent('Órbita Foco Off');},300);}
+function pomoDone(){
+  const p=S.pomo;if(!p)return;const h=allHabits().find(x=>x.id===p.id);
+  const mins=Math.max(1,Math.round((p.dur-pomoLeft())/60000));
+  S.pomoCount=(S.pomoCount||0)+1;S.pomoMin=(S.pomoMin||0)+mins;
+  pomoEnd();
+  if(h&&!S.habits[h.id])doHabit(h.id,'done',h.xp,h.area);
+  const bonus=Math.min(60,mins*2);addXP(bonus,h?.area||null);floatXP(bonus);
+  setTimeout(()=>toast('Foco: '+mins+' min · bonus de concentración','target',0),900);
+}
+function pomoQuit(){if(!confirm('¿Abandonar este bloque de foco? El hábito queda pendiente.'))return;pomoEnd();toast('Bloque cancelado — sigue pendiente','timer',0);}
+function pomoChime(){
+  try{const c=new (window.AudioContext||window.webkitAudioContext)();[0,.25,.5].forEach((t,i)=>{const o=c.createOscillator(),g=c.createGain();
+    o.frequency.value=[880,1175,1568][i];o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.0001,c.currentTime+t);
+    g.gain.exponentialRampToValueAtTime(.25,c.currentTime+t+.02);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+t+.4);o.start(c.currentTime+t);o.stop(c.currentTime+t+.45);});}catch(e){}
+  try{navigator.vibrate&&navigator.vibrate([200,100,200]);}catch(e){}
+}
+async function keepAwake(on){
+  try{if(on&&'wakeLock' in navigator&&!wakeLock){wakeLock=await navigator.wakeLock.request('screen');wakeLock.addEventListener('release',()=>{wakeLock=null;});}
+    if(!on&&wakeLock){await wakeLock.release();wakeLock=null;}}catch(e){}
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){applyTheme();if(S.pomo){keepAwake(true);pomoRender();}}});
+
+// ════════════════════════════════════════════
 // INIT
 // ════════════════════════════════════════════
 window.addEventListener('load',()=>{
+  applyTheme();
+  G('app').addEventListener('scroll',onScreenScroll,true);
+  setInterval(applyTheme,60000);
   const has=load();
   if(has&&S.xp>0){
     checkDayReset();
@@ -1473,6 +1773,7 @@ window.addEventListener('load',()=>{
     const m=G('main');m.style.display='flex';m.style.flexDirection='column';m.style.height='100%';m.style.position='relative';
     buildAreasRow();renderHabits();renderBudget();updateHomeUI();
     nav('home');
+    if(S.pomo)pomoShowRun();
   }else{
     G('onboarding').style.display='block';
     G('main').style.display='none';
@@ -1483,7 +1784,7 @@ window.addEventListener('load',()=>{
     if(S.lastDate&&S.lastDate!==t){
       checkDayReset();
       renderHabits();updateHomeUI();renderBudget();
-      toast('Nuevo día 🌅 Hábitos reiniciados','🌅',0);
+      toast('Nuevo día Hábitos reiniciados','sunrise',0);
     }
   },60000);
 });
