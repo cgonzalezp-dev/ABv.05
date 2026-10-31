@@ -11,6 +11,7 @@ const SUPABASE_ANON_KEY = "PEGA_TU_ANON_KEY_AQUI";
 const SUPABASE_URL = "https://etywvylitxmspxxavvon.supabase.co";
 const APP_URL = "https://cgonzalezp-dev.github.io/ABv.05/";
 const ICON_URL = APP_URL + "icons/";
+const TAP_URL = APP_URL + "?go=habitos"; // al tocar: abre Hábitos de hoy
 // ═══════════════════════════════════════════════════════════
 
 // ── Hábitos (mismo orden y bloques que la app) ──
@@ -330,7 +331,7 @@ const data = await loadData();
 const c = compute(data);
 const fam = config.widgetFamily || "medium";
 const w = new ListWidget();
-w.url = APP_URL;
+w.url = TAP_URL;
 w.refreshAfterDate = new Date(Date.now() + 15 * 60000);
 
 if (fam === "accessoryCircular") await lockCircular(w, c);
@@ -357,8 +358,8 @@ else {
   const pick = new Alert();
   pick.title = "Vista previa"; ["Pequeño", "Mediano", "Grande"].forEach((x) => pick.addAction(x));
   const i = await pick.presentSheet();
-  if (i === 0) { const s = new ListWidget(); s.url = APP_URL; bg(s); await small(s, c); await s.presentSmall(); }
-  else if (i === 2) { const s = new ListWidget(); s.url = APP_URL; bg(s); await large(s, c); await s.presentLarge(); }
+  if (i === 0) { const s = new ListWidget(); s.url = TAP_URL; bg(s); await small(s, c); await s.presentSmall(); }
+  else if (i === 2) { const s = new ListWidget(); s.url = TAP_URL; bg(s); await large(s, c); await s.presentLarge(); }
   else await w.presentMedium();
 }
 Script.complete();
