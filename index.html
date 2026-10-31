@@ -1816,6 +1816,7 @@ window.addEventListener('load',()=>{
     const m=G('main');m.style.display='flex';m.style.flexDirection='column';m.style.height='100%';m.style.position='relative';
     buildAreasRow();renderHabits();renderBudget();updateHomeUI();
     nav('home');
+    try{const go=new URLSearchParams(location.search).get('go');if(go&&G('s-'+go)){nav(go);history.replaceState(null,'',location.pathname);}}catch(e){}
     if(S.pomo)pomoShowRun();
   }else{
     G('onboarding').style.display='block';
