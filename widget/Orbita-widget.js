@@ -11,7 +11,10 @@ const SUPABASE_ANON_KEY = "PEGA_TU_ANON_KEY_AQUI";
 const SUPABASE_URL = "https://etywvylitxmspxxavvon.supabase.co";
 const APP_URL = "https://cgonzalezp-dev.github.io/ABv.05/";
 const ICON_URL = APP_URL + "icons/";
-const TAP_URL = APP_URL + "?go=habitos"; // al tocar: abre Hábitos de hoy
+// Al tocar: ejecuta el atajo "Abrir Órbita" (app Atajos → acción "Abrir app" → Órbita),
+// así abre la app instalada con tus datos, no Safari.
+const SHORTCUT_NAME = "Abrir Órbita";
+const TAP_URL = "shortcuts://run-shortcut?name=" + encodeURIComponent(SHORTCUT_NAME);
 // ═══════════════════════════════════════════════════════════
 
 // ── Hábitos (mismo orden y bloques que la app) ──
